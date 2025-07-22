@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 9: Semantic HTML</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html">6. Gambar & Multimedia</a></li>
+          <li><a href="07-table.html">7. Table</a></li>
+          <li><a href="08-form.html">8. Formulir (Form)</a></li>
+          <li><a href="09-semantic.html" class="active">9. Semantic HTML</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 9: Semantic HTML</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="Semantic Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Apa itu Semantic HTML?</h2>
+      <p>Semantic HTML adalah penggunaan tag HTML yang mendeskripsikan makna (arti) dari konten, bukan hanya tampilannya. Ini membantu SEO, aksesibilitas, dan struktur kode yang lebih baik.</p>
+      <h3>Contoh Tag Semantic</h3>
+      <ul>
+        <li><code>&lt;header&gt;</code>: Bagian atas halaman (judul, navigasi)</li>
+        <li><code>&lt;nav&gt;</code>: Navigasi</li>
+        <li><code>&lt;main&gt;</code>: Konten utama</li>
+        <li><code>&lt;article&gt;</code>: Artikel mandiri</li>
+        <li><code>&lt;section&gt;</code>: Bagian dari halaman</li>
+        <li><code>&lt;aside&gt;</code>: Konten sampingan</li>
+        <li><code>&lt;footer&gt;</code>: Bagian bawah halaman</li>
+        <li><code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code>: Gambar & caption</li>
+      </ul>
+      <h3>Contoh Struktur Semantic HTML</h3>
+      <pre><code>&lt;header&gt;
+  &lt;h1&gt;Judul Website&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Judul Artikel&lt;/h2&gt;
+    &lt;section&gt;...&lt;/section&gt;
+  &lt;/article&gt;
+  &lt;aside&gt;Sidebar&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;Copyright 2024&lt;/footer&gt;
+</code></pre>
+      <h2>Ilustrasi Semantic HTML</h2>
+      <img src="https://www.html5tutorial.info/images/semantic-elements.png" alt="Ilustrasi Semantic HTML" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>semantic.html</code>.</li>
+        <li>Buat struktur halaman dengan <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+        <li>Tambahkan <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, dan <code>&lt;aside&gt;</code> sesuai kebutuhan.</li>
+        <li>Buka di browser dan amati struktur HTML-nya.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Mengapa semantic HTML penting untuk SEO?</li>
+        <li>Sebutkan 3 tag semantic HTML dan fungsinya.</li>
+        <li>Apa perbedaan <code>&lt;section&gt;</code> dan <code>&lt;div&gt;</code>?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="08-form.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

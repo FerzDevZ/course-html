@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 5: Link & Navigasi</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html" class="active">5. Link & Navigasi</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 5: Link & Navigasi</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Link Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Mengenal Link di HTML</h2>
+      <p>Link (<code>&lt;a&gt;</code>) digunakan untuk membuat tautan antar halaman, ke website lain, atau ke bagian tertentu dalam halaman.</p>
+      <h3>Contoh Link Dasar</h3>
+      <pre><code>&lt;a href="https://www.google.com" target="_blank"&gt;Kunjungi Google&lt;/a&gt;
+</code></pre>
+      <h3>Link Internal & Eksternal</h3>
+      <ul>
+        <li><b>Internal</b>: Menuju halaman lain di website yang sama.<br>
+          <code>&lt;a href="about.html"&gt;Tentang Kami&lt;/a&gt;</code></li>
+        <li><b>Eksternal</b>: Menuju website lain.<br>
+          <code>&lt;a href="https://www.wikipedia.org" target="_blank"&gt;Wikipedia&lt;/a&gt;</code></li>
+      </ul>
+      <h3>Anchor Link (Tautan ke Bagian Halaman)</h3>
+      <pre><code>&lt;a href="#bagian2"&gt;Lompat ke Bagian 2&lt;/a&gt;
+...
+&lt;h2 id="bagian2"&gt;Bagian 2&lt;/h2&gt;
+</code></pre>
+      <h3>Link Download</h3>
+      <pre><code>&lt;a href="/assets/contoh.pdf" download&gt;Download PDF&lt;/a&gt;
+</code></pre>
+      <h2>Ilustrasi Link & Navigasi</h2>
+      <img src="https://www.w3schools.com/html/img_links.gif" alt="Ilustrasi Link" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>link-navigasi.html</code>.</li>
+        <li>Buat link ke Google, ke halaman lain di folder Anda, dan anchor link ke bagian bawah halaman.</li>
+        <li>Coba tambahkan link download (gunakan file dari internet, misal PDF gratis).</li>
+        <li>Buka di browser dan uji semua link.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Apa perbedaan link internal dan eksternal?</li>
+        <li>Apa fungsi atribut <code>target="_blank"</code>?</li>
+        <li>Bagaimana cara membuat link download di HTML?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="04-list.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

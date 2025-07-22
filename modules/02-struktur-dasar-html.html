@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 2: Struktur Dasar HTML</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html" class="active">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 2: Struktur Dasar HTML</h1>
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt="HTML5 Logo" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Struktur Dasar Dokumen HTML</h2>
+      <p>Setiap halaman web HTML memiliki struktur dasar yang wajib diikuti agar dapat dikenali browser dengan benar. Berikut adalah bagian-bagian utamanya:</p>
+      <ul>
+        <li><b>&lt;!DOCTYPE html&gt;</b>: Mendeklarasikan tipe dokumen HTML5.</li>
+        <li><b>&lt;html&gt;</b>: Elemen root, membungkus seluruh isi dokumen.</li>
+        <li><b>&lt;head&gt;</b>: Berisi metadata, judul, link CSS, dsb.</li>
+        <li><b>&lt;body&gt;</b>: Berisi seluruh konten yang tampil di browser.</li>
+      </ul>
+      <h2>Contoh Struktur Dasar HTML</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Halo, dunia!&lt;/h1&gt;
+    &lt;p&gt;Ini adalah halaman HTML pertama saya.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      <h2>Penjelasan Setiap Bagian</h2>
+      <ul>
+        <li><b>&lt;!DOCTYPE html&gt;</b>: Wajib di baris pertama, memberitahu browser bahwa ini dokumen HTML5.</li>
+        <li><b>&lt;html lang="id"&gt;</b>: Tag pembuka HTML, <code>lang="id"</code> artinya bahasa Indonesia.</li>
+        <li><b>&lt;head&gt;</b>: Berisi info tentang dokumen (tidak tampil di halaman), seperti judul, meta, link CSS/JS.</li>
+        <li><b>&lt;body&gt;</b>: Semua konten yang akan tampil di browser (teks, gambar, dsb).</li>
+      </ul>
+      <h2>Ilustrasi Struktur HTML</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML_structure.svg" alt="Struktur HTML" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>struktur.html</code> di text editor Anda.</li>
+        <li>Tulis struktur dasar HTML seperti contoh di atas.</li>
+        <li>Ubah judul halaman dan isi <code>&lt;body&gt;</code> sesuai keinginan Anda.</li>
+        <li>Buka di browser, pastikan tampil dengan benar.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Apa fungsi tag <code>&lt;head&gt;</code> dan <code>&lt;body&gt;</code>?</li>
+        <li>Mengapa <code>&lt;!DOCTYPE html&gt;</code> penting?</li>
+        <li>Bagaimana cara menentukan bahasa dokumen HTML?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="01-pengenalan-html.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 1: Pengenalan HTML</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html" class="active">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 1: Pengenalan HTML</h1>
+      <h2>Apa itu HTML?</h2>
+      <p><b>HTML</b> (HyperText Markup Language) adalah bahasa standar untuk membuat dan menyusun halaman web. HTML digunakan untuk menentukan struktur, isi, dan elemen-elemen pada halaman web.</p>
+      <h2>Sejarah Singkat HTML</h2>
+      <ul>
+        <li>Diciptakan oleh Tim Berners-Lee pada tahun 1991.</li>
+        <li>HTML berkembang dari versi 1.0 hingga HTML5 (saat ini).</li>
+        <li>HTML5 membawa banyak fitur modern seperti video, audio, canvas, dan semantic tag.</li>
+      </ul>
+      <h2>Fungsi HTML</h2>
+      <ul>
+        <li>Membuat struktur dasar halaman web</li>
+        <li>Menampilkan teks, gambar, video, dan elemen multimedia</li>
+        <li>Menghubungkan antar halaman (hyperlink)</li>
+        <li>Menjadi fondasi sebelum menambahkan CSS & JavaScript</li>
+      </ul>
+      <h2>Contoh Kode HTML Sederhana</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Halo, dunia!&lt;/h1&gt;
+    &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buka text editor (Notepad, VSCode, dsb).</li>
+        <li>Buat file <code>index.html</code>.</li>
+        <li>Tulis kode HTML sederhana seperti contoh di atas.</li>
+        <li>Buka file tersebut di browser dan lihat hasilnya.</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="../index.html">⬅️ Kembali</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

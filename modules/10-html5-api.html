@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 10: HTML5 API</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html">6. Gambar & Multimedia</a></li>
+          <li><a href="07-table.html">7. Table</a></li>
+          <li><a href="08-form.html">8. Formulir (Form)</a></li>
+          <li><a href="09-semantic.html">9. Semantic HTML</a></li>
+          <li><a href="10-html5-api.html" class="active">10. HTML5 API</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 10: HTML5 API</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML5 API Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Apa itu HTML5 API?</h2>
+      <p>HTML5 memperkenalkan banyak API (Application Programming Interface) yang memungkinkan interaksi dan fitur baru di browser tanpa plugin tambahan.</p>
+      <h3>Beberapa HTML5 API Populer</h3>
+      <ul>
+        <li><b>Audio & Video API</b>: Memutar media langsung di browser.</li>
+        <li><b>Canvas API</b>: Menggambar grafik 2D secara dinamis.</li>
+        <li><b>Geolocation API</b>: Mengambil lokasi pengguna (dengan izin).</li>
+        <li><b>Drag & Drop API</b>: Fitur seret-lepas elemen.</li>
+        <li><b>Web Storage API</b>: Menyimpan data di browser (localStorage, sessionStorage).</li>
+      </ul>
+      <h2>Contoh Canvas API</h2>
+      <pre><code>&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #ccc;"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var c = document.getElementById('myCanvas');
+  var ctx = c.getContext('2d');
+  ctx.fillStyle = '#4f8cff';
+  ctx.fillRect(20, 20, 150, 50);
+&lt;/script&gt;
+</code></pre>
+      <canvas id="myCanvas" width="200" height="100" style="border:1px solid #ccc;"></canvas>
+      <script>
+        var c = document.getElementById('myCanvas');
+        if (c) {
+          var ctx = c.getContext('2d');
+          ctx.fillStyle = '#4f8cff';
+          ctx.fillRect(20, 20, 150, 50);
+        }
+      </script>
+      <h2>Contoh Geolocation API</h2>
+      <pre><code>&lt;button onclick="getLocation()"&gt;Cek Lokasi Saya&lt;/button&gt;
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(pos) {
+      document.getElementById('demo').innerHTML =
+        'Latitude: ' + pos.coords.latitude + '<br>Longitude: ' + pos.coords.longitude;
+    });
+  } else {
+    document.getElementById('demo').innerHTML = 'Geolocation tidak didukung browser.';
+  }
+}
+&lt;/script&gt;
+</code></pre>
+      <h2>Ilustrasi HTML5 API</h2>
+      <img src="https://www.html5rocks.com/static/images/identity/html5-badge-h-css3-graphics-multimedia-performance-semantics.png" alt="Ilustrasi HTML5 API" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>html5-api.html</code>.</li>
+        <li>Coba buat canvas sederhana dan gambar kotak/lingkaran.</li>
+        <li>Coba gunakan Geolocation API (hanya di browser yang mendukung).</li>
+        <li>Eksplorasi Web Storage API dengan <code>localStorage</code>.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Sebutkan 3 API baru di HTML5 dan fungsinya.</li>
+        <li>Apa perbedaan <code>localStorage</code> dan <code>sessionStorage</code>?</li>
+        <li>Bagaimana cara menggambar di <code>&lt;canvas&gt;</code>?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="09-semantic.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

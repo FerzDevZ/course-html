@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 11: Best Practice & SEO Dasar</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html">6. Gambar & Multimedia</a></li>
+          <li><a href="07-table.html">7. Table</a></li>
+          <li><a href="08-form.html">8. Formulir (Form)</a></li>
+          <li><a href="09-semantic.html">9. Semantic HTML</a></li>
+          <li><a href="10-html5-api.html">10. HTML5 API</a></li>
+          <li><a href="11-best-practice-seo.html" class="active">11. Best Practice & SEO Dasar</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 11: Best Practice & SEO Dasar</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="SEO Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Best Practice Penulisan HTML</h2>
+      <ul>
+        <li>Gunakan struktur HTML yang benar dan rapi (indentasi, penamaan tag jelas).</li>
+        <li>Selalu gunakan <code>&lt;!DOCTYPE html&gt;</code> dan <code>lang</code> pada tag <code>&lt;html&gt;</code>.</li>
+        <li>Gunakan semantic HTML untuk struktur yang jelas.</li>
+        <li>Tambahkan <code>alt</code> pada gambar untuk aksesibilitas.</li>
+        <li>Validasi kode HTML di <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+      </ul>
+      <h2>Dasar SEO (Search Engine Optimization)</h2>
+      <ul>
+        <li>Gunakan tag <code>&lt;title&gt;</code> yang deskriptif dan unik di setiap halaman.</li>
+        <li>Tambahkan <code>&lt;meta name="description"&gt;</code> untuk ringkasan halaman.</li>
+        <li>Gunakan heading (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, dst) secara berurutan.</li>
+        <li>Gunakan URL yang ramah (tanpa karakter aneh).</li>
+        <li>Optimalkan gambar (ukuran, <code>alt</code> deskriptif).</li>
+        <li>Gunakan <code>&lt;a&gt;</code> dengan teks link yang jelas.</li>
+      </ul>
+      <h2>Contoh Meta Tag SEO</h2>
+      <pre><code>&lt;head&gt;
+  &lt;title&gt;Belajar HTML Lengkap&lt;/title&gt;
+  &lt;meta name="description" content="Kursus HTML terlengkap dari dasar hingga mahir."&gt;
+  &lt;meta name="keywords" content="html, kursus, belajar, web"&gt;
+  &lt;meta name="author" content="Nama Anda"&gt;
+&lt;/head&gt;
+</code></pre>
+      <h2>Ilustrasi SEO</h2>
+      <img src="https://www.seobility.net/en/wiki/images/6/6e/HTML-SEO-Elements.png" alt="Ilustrasi SEO" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>seo.html</code>.</li>
+        <li>Tambahkan meta tag SEO di <code>&lt;head&gt;</code> dan struktur heading yang benar.</li>
+        <li>Validasi kode HTML Anda di <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Mengapa <code>&lt;meta name="description"&gt;</code> penting untuk SEO?</li>
+        <li>Sebutkan 3 best practice penulisan HTML.</li>
+        <li>Bagaimana cara membuat gambar SEO friendly?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="10-html5-api.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

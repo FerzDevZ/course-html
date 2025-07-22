@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 7: Table</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html">6. Gambar & Multimedia</a></li>
+          <li><a href="07-table.html" class="active">7. Table</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 7: Table</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png" alt="Table Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Membuat Tabel di HTML</h2>
+      <p>Tabel digunakan untuk menampilkan data dalam baris dan kolom. Tag utama: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (baris), <code>&lt;th&gt;</code> (header), <code>&lt;td&gt;</code> (data).</p>
+      <h3>Contoh Tabel Sederhana</h3>
+      <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nama&lt;/th&gt;
+    &lt;th&gt;Umur&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Andi&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Budi&lt;/td&gt;
+    &lt;td&gt;22&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+      <h3>Hasilnya:</h3>
+      <table border="1" style="margin-bottom:1rem;">
+        <tr><th>Nama</th><th>Umur</th></tr>
+        <tr><td>Andi</td><td>20</td></tr>
+        <tr><td>Budi</td><td>22</td></tr>
+      </table>
+      <h2>Struktur Tabel Lanjutan</h2>
+      <ul>
+        <li><b>&lt;thead&gt;</b>: Kepala tabel</li>
+        <li><b>&lt;tbody&gt;</b>: Isi tabel</li>
+        <li><b>&lt;tfoot&gt;</b>: Kaki tabel</li>
+        <li><b>colspan</b> & <b>rowspan</b>: Gabung kolom/baris</li>
+      </ul>
+      <h3>Contoh Gabung Kolom</h3>
+      <pre><code>&lt;td colspan="2"&gt;Gabung 2 kolom&lt;/td&gt;
+</code></pre>
+      <h2>Ilustrasi Tabel</h2>
+      <img src="https://www.w3schools.com/html/img_table.gif" alt="Ilustrasi Table" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>table.html</code>.</li>
+        <li>Buat tabel data siswa (nama, umur, nilai) minimal 3 baris.</li>
+        <li>Coba gunakan <code>colspan</code> dan <code>rowspan</code>.</li>
+        <li>Tambahkan <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, dan <code>&lt;tfoot&gt;</code> jika perlu.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Apa fungsi <code>&lt;th&gt;</code> dan <code>&lt;td&gt;</code>?</li>
+        <li>Kapan menggunakan <code>colspan</code> dan <code>rowspan</code>?</li>
+        <li>Bagaimana cara membuat header tabel tetap di atas saat scroll?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="06-gambar-multimedia.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

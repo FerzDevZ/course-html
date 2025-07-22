@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 6: Gambar & Multimedia</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html" class="active">6. Gambar & Multimedia</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 6: Gambar & Multimedia</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Gambar Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Menampilkan Gambar di HTML</h2>
+      <p>Gunakan tag <code>&lt;img&gt;</code> untuk menampilkan gambar. Sumber gambar bisa dari internet atau lokal.</p>
+      <pre><code>&lt;img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Pemandangan Alam" width="300"&gt;
+</code></pre>
+      <h3>Penjelasan Atribut <code>&lt;img&gt;</code></h3>
+      <ul>
+        <li><b>src</b>: Alamat gambar (URL atau path lokal)</li>
+        <li><b>alt</b>: Teks alternatif (untuk aksesibilitas & SEO)</li>
+        <li><b>width/height</b>: Ukuran gambar (opsional)</li>
+      </ul>
+      <h2>Menampilkan Video</h2>
+      <p>Gunakan tag <code>&lt;video&gt;</code> untuk menampilkan video. Bisa dari file lokal atau link internet.</p>
+      <pre><code>&lt;video src="https://www.w3schools.com/html/mov_bbb.mp4" controls width="320"&gt;&lt;/video&gt;
+</code></pre>
+      <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls width="320" style="margin-bottom:1rem;"></video>
+      <h2>Menampilkan Audio</h2>
+      <pre><code>&lt;audio src="https://www.w3schools.com/html/horse.mp3" controls&gt;&lt;/audio&gt;
+</code></pre>
+      <audio src="https://www.w3schools.com/html/horse.mp3" controls style="margin-bottom:1rem;"></audio>
+      <h2>Tag Multimedia Lainnya</h2>
+      <ul>
+        <li><b>&lt;figure&gt;</b> & <b>&lt;figcaption&gt;</b>: Untuk gambar dengan caption.</li>
+        <li><b>&lt;iframe&gt;</b>: Untuk embed video YouTube, peta, dsb.</li>
+        <li><b>&lt;embed&gt;</b> & <b>&lt;object&gt;</b>: Untuk file PDF, animasi, dsb.</li>
+      </ul>
+      <h2>Ilustrasi Multimedia</h2>
+      <img src="https://www.w3schools.com/html/img_the_scream.jpg" alt="Contoh Gambar" width="200" style="margin-right:1rem;display:inline-block;">
+      <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Contoh Gambar 2" width="200" style="display:inline-block;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>gambar-multimedia.html</code>.</li>
+        <li>Tambahkan gambar dari internet dan lokal (jika ada).</li>
+        <li>Tambahkan video dan audio dari internet.</li>
+        <li>Gunakan <code>&lt;figure&gt;</code> dan <code>&lt;figcaption&gt;</code> untuk gambar dengan caption.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Apa fungsi atribut <code>alt</code> pada gambar?</li>
+        <li>Bagaimana cara menampilkan video dari YouTube di HTML?</li>
+        <li>Kapan sebaiknya menggunakan <code>&lt;figure&gt;</code> dan <code>&lt;figcaption&gt;</code>?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="05-link-navigasi.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

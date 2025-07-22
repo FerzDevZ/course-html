@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 8: Formulir (Form)</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="06-gambar-multimedia.html">6. Gambar & Multimedia</a></li>
+          <li><a href="07-table.html">7. Table</a></li>
+          <li><a href="08-form.html" class="active">8. Formulir (Form)</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 8: Formulir (Form)</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Form Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Membuat Formulir di HTML</h2>
+      <p>Formulir digunakan untuk mengumpulkan data dari pengguna. Tag utama: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;label&gt;</code>.</p>
+      <h3>Contoh Formulir Sederhana</h3>
+      <pre><code>&lt;form action="#" method="post"&gt;
+  Nama: &lt;input type="text" name="nama"&gt;&lt;br&gt;
+  Email: &lt;input type="email" name="email"&gt;&lt;br&gt;
+  Pesan: &lt;textarea name="pesan"&gt;&lt;/textarea&gt;&lt;br&gt;
+  &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+      <h3>Hasilnya:</h3>
+      <form action="#" method="post" style="background:#f3f3f3;padding:1rem;border-radius:8px;max-width:400px;">
+        Nama: <input type="text" name="nama"><br>
+        Email: <input type="email" name="email"><br>
+        Pesan: <textarea name="pesan"></textarea><br>
+        <button type="submit">Kirim</button>
+      </form>
+      <h2>Jenis Input pada Form</h2>
+      <ul>
+        <li><b>text</b>: Input teks biasa</li>
+        <li><b>email</b>: Input email (validasi otomatis)</li>
+        <li><b>password</b>: Input sandi</li>
+        <li><b>radio</b>: Pilihan satu dari beberapa</li>
+        <li><b>checkbox</b>: Pilihan jamak</li>
+        <li><b>file</b>: Upload file</li>
+        <li><b>date, number, range, dsb.</b></li>
+      </ul>
+      <h3>Contoh Input Radio & Checkbox</h3>
+      <pre><code>&lt;input type="radio" name="gender" value="pria"&gt; Pria
+&lt;input type="radio" name="gender" value="wanita"&gt; Wanita
+&lt;br&gt;
+&lt;input type="checkbox" name="hobi" value="musik"&gt; Musik
+&lt;input type="checkbox" name="hobi" value="olahraga"&gt; Olahraga
+</code></pre>
+      <h2>Label & Fieldset</h2>
+      <pre><code>&lt;label for="nama"&gt;Nama Lengkap&lt;/label&gt;
+&lt;input id="nama" name="nama"&gt;
+
+&lt;fieldset&gt;
+  &lt;legend&gt;Data Diri&lt;/legend&gt;
+  ...
+&lt;/fieldset&gt;
+</code></pre>
+      <h2>Ilustrasi Formulir</h2>
+      <img src="https://www.w3schools.com/html/img_form_elements.gif" alt="Ilustrasi Form" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>form.html</code>.</li>
+        <li>Buat form pendaftaran sederhana (nama, email, password, gender, hobi, pesan).</li>
+        <li>Gunakan <code>&lt;label&gt;</code> dan <code>&lt;fieldset&gt;</code> untuk aksesibilitas.</li>
+        <li>Coba submit form dan amati hasilnya.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Apa fungsi atribut <code>name</code> pada input?</li>
+        <li>Bagaimana cara membuat input hanya menerima angka?</li>
+        <li>Kapan menggunakan <code>&lt;fieldset&gt;</code> dan <code>&lt;legend&gt;</code>?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="07-table.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

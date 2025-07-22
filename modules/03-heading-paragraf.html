@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 3: Heading & Paragraf</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
+      <h2>HTML Course</h2>
+      <nav>
+        <ul>
+          <li><a href="01-pengenalan-html.html">1. Pengenalan HTML</a></li>
+          <li><a href="02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
+          <li><a href="03-heading-paragraf.html" class="active">3. Heading & Paragraf</a></li>
+          <li><a href="04-list.html">4. List</a></li>
+          <li><a href="05-link-navigasi.html">5. Link & Navigasi</a></li>
+          <li><a href="#">...</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle">🌙/☀️</button>
+    </aside>
+    <main class="content">
+      <h1>Modul 3: Heading & Paragraf</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="Heading Icon" width="60" style="display:block;margin-bottom:1rem;">
+      <h2>Heading (Judul) dalam HTML</h2>
+      <p>Heading digunakan untuk membuat judul dan subjudul pada halaman web. HTML menyediakan 6 level heading, dari <code>&lt;h1&gt;</code> (paling penting) hingga <code>&lt;h6&gt;</code> (paling kecil).</p>
+      <pre><code>&lt;h1&gt;Judul Utama&lt;/h1&gt;
+&lt;h2&gt;Subjudul&lt;/h2&gt;
+&lt;h3&gt;Sub-subjudul&lt;/h3&gt;
+&lt;h4&gt;Judul Kecil&lt;/h4&gt;
+&lt;h5&gt;Judul Lebih Kecil&lt;/h5&gt;
+&lt;h6&gt;Judul Paling Kecil&lt;/h6&gt;
+</code></pre>
+      <h3>Contoh Tampilan Heading</h3>
+      <div style="background:#f3f3f3;padding:1rem;border-radius:8px;margin-bottom:1rem;">
+        <h1>Ini H1</h1>
+        <h2>Ini H2</h2>
+        <h3>Ini H3</h3>
+        <h4>Ini H4</h4>
+        <h5>Ini H5</h5>
+        <h6>Ini H6</h6>
+      </div>
+      <h2>Paragraf dalam HTML</h2>
+      <p>Paragraf dibuat dengan tag <code>&lt;p&gt;</code>. Setiap paragraf otomatis diberi jarak oleh browser.</p>
+      <pre><code>&lt;p&gt;Ini adalah satu paragraf.&lt;/p&gt;
+&lt;p&gt;Ini paragraf kedua.&lt;/p&gt;
+</code></pre>
+      <h3>Tips Penulisan Heading & Paragraf</h3>
+      <ul>
+        <li>Gunakan <code>&lt;h1&gt;</code> hanya satu kali per halaman (untuk judul utama).</li>
+        <li>Gunakan heading secara berurutan (h1 → h2 → h3, dst).</li>
+        <li>Paragraf tidak boleh di-nest di dalam heading.</li>
+        <li>Heading membantu SEO dan aksesibilitas.</li>
+      </ul>
+      <h2>Ilustrasi Heading & Paragraf</h2>
+      <img src="https://www.html.am/images/html-codes/heading-tags.gif" alt="Ilustrasi Heading" style="max-width:100%;border:1px solid #ccc;border-radius:8px;">
+      <h2>Latihan</h2>
+      <ol>
+        <li>Buat file <code>heading-paragraf.html</code>.</li>
+        <li>Buat judul utama, subjudul, dan beberapa paragraf sesuai contoh.</li>
+        <li>Ubah isi heading dan paragraf sesuai topik favorit Anda.</li>
+        <li>Buka di browser dan amati perbedaan ukuran heading.</li>
+      </ol>
+      <h2>Quiz</h2>
+      <ol>
+        <li>Berapa level heading yang tersedia di HTML?</li>
+        <li>Mengapa <code>&lt;h1&gt;</code> sebaiknya hanya satu per halaman?</li>
+        <li>Apa yang terjadi jika Anda menulis paragraf tanpa tag <code>&lt;p&gt;</code>?</li>
+      </ol>
+      <div style="margin-top:2rem;display:flex;justify-content:space-between;">
+        <a href="02-struktur-dasar-html.html">⬅️ Modul Sebelumnya</a>
+        <a href="#">Modul Selanjutnya ➡️</a>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 
