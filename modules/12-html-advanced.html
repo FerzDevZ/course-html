@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modul 2: Struktur Dasar HTML</title>
+  <title>Modul 12: HTML Lanjutan</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -66,42 +66,50 @@
       <div class="content-wrapper">
         <div class="module-content">
           <div class="module-header">
-            <h1 class="module-title">Modul 2: Struktur Dasar HTML</h1>
-            <p class="module-subtitle">Pelajari struktur utama dokumen HTML dan fungsinya</p>
+            <h1 class="module-title">Modul 12: HTML Lanjutan</h1>
+            <p class="module-subtitle">Pelajari fitur-fitur lanjutan HTML5 untuk website modern</p>
           </div>
           <div class="module-body">
             <section class="content-section">
-              <h2><i class="fas fa-layer-group"></i> Struktur Dasar HTML</h2>
-              <p>Setiap dokumen HTML memiliki struktur dasar yang terdiri dari beberapa elemen utama:</p>
+              <h2><i class="fas fa-star"></i> Meta Tag & Favicon</h2>
+              <p>Meta tag digunakan untuk memberikan informasi tambahan pada browser dan mesin pencari. Favicon adalah ikon kecil yang muncul di tab browser.</p>
+              <div class="code-example">
+                <h3>Contoh Meta Tag & Favicon:</h3>
+                <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Belajar HTML Lanjutan"&gt;
+  &lt;link rel="icon" href="favicon.ico"&gt;
+  &lt;title&gt;HTML Lanjutan&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+              </div>
+            </section>
+            <section class="content-section">
+              <h2><i class="fas fa-cogs"></i> Fitur Lanjutan HTML5</h2>
               <ul>
-                <li><code>&lt;!DOCTYPE html&gt;</code> — Mendefinisikan tipe dokumen (HTML5)</li>
-                <li><code>&lt;html&gt;</code> — Root dari seluruh dokumen</li>
-                <li><code>&lt;head&gt;</code> — Berisi metadata, judul, link CSS, dsb</li>
-                <li><code>&lt;body&gt;</code> — Berisi konten utama yang tampil di browser</li>
+                <li><b>Audio & Video:</b> Menyisipkan media tanpa plugin eksternal</li>
+                <li><b>Canvas:</b> Menggambar grafik dan animasi</li>
+                <li><b>LocalStorage:</b> Menyimpan data di browser</li>
+                <li><b>Geolocation:</b> Mendapatkan lokasi pengguna</li>
+                <li><b>Drag & Drop:</b> Interaksi seret dan lepas</li>
               </ul>
               <div class="code-example">
-                <h3>Contoh Struktur Dasar HTML:</h3>
-                <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="id"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Judul Halaman&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Halo, dunia!&lt;/h1&gt;
-    &lt;p&gt;Ini adalah paragraf pertama.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+                <h3>Contoh Audio & Video:</h3>
+                <pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video controls width="320" height="240"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
               </div>
             </section>
             <section class="content-section">
               <h2><i class="fas fa-tasks"></i> Latihan</h2>
               <ol>
-                <li>Buat file <code>struktur.html</code> di text editor.</li>
-                <li>Tulis struktur dasar HTML seperti contoh di atas.</li>
-                <li>Tambahkan satu heading dan satu paragraf di dalam <code>&lt;body&gt;</code>.</li>
-                <li>Buka file di browser dan lihat hasilnya.</li>
+                <li>Tambahkan meta tag dan favicon pada file HTML kamu.</li>
+                <li>Coba sisipkan audio dan video ke halaman web.</li>
+                <li>Eksplorasi fitur localStorage dan canvas.</li>
               </ol>
             </section>
             <div id="module-navigation"></div>

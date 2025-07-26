@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 13: CSS Layout</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 13: CSS Layout</h1>
+            <p class="module-subtitle">Pelajari teknik layout modern dengan CSS Flexbox dan Grid</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-th-large"></i> CSS Layout Modern</h2>
+              <p>CSS Layout adalah teknik untuk mengatur posisi dan susunan elemen-elemen dalam halaman web. Ada beberapa metode layout yang dapat digunakan:</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-puzzle-piece"></i> Layout = Puzzle</h4>
+                    <p>Layout CSS seperti menyusun puzzle. Setiap elemen adalah kepingan puzzle yang harus ditempatkan dengan tepat untuk membentuk gambar yang utuh.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-building"></i> Layout = Arsitektur</h4>
+                    <p>Layout seperti merancang denah rumah. Kita menentukan di mana dinding, ruangan, dan pintu akan ditempatkan untuk menciptakan struktur yang fungsional.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-boxes"></i> CSS Flexbox</h2>
+              <p>Flexbox adalah model layout satu dimensi yang dirancang untuk mengatur elemen dalam satu arah (baris atau kolom).</p>
+              
+              <div class="code-example">
+                <h3>Contoh Flexbox:</h3>
+                <pre><code>.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.item {
+  flex: 1;
+  margin: 10px;
+}</code></pre>
+              </div>
+
+              <h3>Property Flexbox Utama:</h3>
+              <ul>
+                <li><code>display: flex</code> - Mengaktifkan flexbox</li>
+                <li><code>justify-content</code> - Mengatur alignment horizontal</li>
+                <li><code>align-items</code> - Mengatur alignment vertical</li>
+                <li><code>flex-direction</code> - Mengatur arah flex (row/column)</li>
+                <li><code>flex-wrap</code> - Mengatur wrapping elemen</li>
+              </ul>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-table"></i> CSS Grid</h2>
+              <p>CSS Grid adalah model layout dua dimensi yang memungkinkan kita membuat layout kompleks dengan baris dan kolom.</p>
+              
+              <div class="code-example">
+                <h3>Contoh CSS Grid:</h3>
+                <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.grid-item {
+  padding: 20px;
+  background: #f0f0f0;
+}</code></pre>
+              </div>
+
+              <h3>Property Grid Utama:</h3>
+              <ul>
+                <li><code>display: grid</code> - Mengaktifkan grid</li>
+                <li><code>grid-template-columns</code> - Mendefinisikan kolom</li>
+                <li><code>grid-template-rows</code> - Mendefinisikan baris</li>
+                <li><code>gap</code> - Jarak antar grid item</li>
+                <li><code>grid-area</code> - Menentukan area grid</li>
+              </ul>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-arrows-alt"></i> CSS Positioning</h2>
+              <p>Positioning digunakan untuk mengatur posisi elemen relatif terhadap elemen lain atau viewport.</p>
+              
+              <div class="code-example">
+                <h3>Jenis Positioning:</h3>
+                <pre><code>.relative {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              <ol>
+                <li>Buat layout header, sidebar, dan content menggunakan flexbox</li>
+                <li>Coba buat grid 3x3 dengan CSS Grid</li>
+                <li>Eksperimen dengan positioning untuk membuat floating button</li>
+                <li>Buat responsive layout yang berubah dari desktop ke mobile</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="flexbox">Flexbox Layout</option>
+                    <option value="grid">CSS Grid</option>
+                    <option value="positioning">Positioning</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

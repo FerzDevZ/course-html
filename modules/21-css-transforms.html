@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 21: CSS Transforms</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 21: CSS Transforms</h1>
+            <p class="module-subtitle">Pelajari transformasi elemen dengan CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-arrows-alt"></i> CSS Transforms</h2>
+              <p>CSS Transforms memungkinkan kita mengubah bentuk, ukuran, dan posisi elemen tanpa mempengaruhi layout dokumen.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-magic"></i> Transforms = Sihir</h4>
+                    <p>Seperti sihir yang mengubah bentuk benda, CSS transforms mengubah tampilan elemen tanpa mengubah struktur aslinya.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-camera"></i> Transforms = Kamera</h4>
+                    <p>Seperti kamera yang bisa zoom, rotate, dan move, CSS transforms memungkinkan manipulasi visual elemen.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-arrows-alt-h"></i> Translate</h2>
+              <p>Translate memindahkan elemen dari posisi aslinya tanpa mempengaruhi layout.</p>
+              
+              <div class="code-example">
+                <h3>CSS Translate:</h3>
+                <pre><code>.element {
+  /* Translate X (horizontal) */
+  transform: translateX(50px);
+  transform: translateX(-20px);
+  
+  /* Translate Y (vertical) */
+  transform: translateY(30px);
+  transform: translateY(-10px);
+  
+  /* Translate X dan Y */
+  transform: translate(50px, 30px);
+  transform: translate(-20px, -10px);
+  
+  /* Percentage values */
+  transform: translateX(50%);
+  transform: translateY(100%);
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-redo"></i> Rotate</h2>
+              <p>Rotate memutar elemen berdasarkan sudut tertentu.</p>
+              
+              <div class="code-example">
+                <h3>CSS Rotate:</h3>
+                <pre><code>.element {
+  /* Rotate dengan derajat */
+  transform: rotate(45deg);
+  transform: rotate(90deg);
+  transform: rotate(180deg);
+  transform: rotate(360deg);
+  
+  /* Rotate negatif (counter-clockwise) */
+  transform: rotate(-45deg);
+  
+  /* Rotate dengan radian */
+  transform: rotate(1.57rad);
+  
+  /* Rotate dengan gradian */
+  transform: rotate(100grad);
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-expand-arrows-alt"></i> Scale</h2>
+              <p>Scale mengubah ukuran elemen (memperbesar atau memperkecil).</p>
+              
+              <div class="code-example">
+                <h3>CSS Scale:</h3>
+                <pre><code>.element {
+  /* Scale X (horizontal) */
+  transform: scaleX(2);    /* 2x lebih lebar */
+  transform: scaleX(0.5);  /* 0.5x lebih sempit */
+  
+  /* Scale Y (vertical) */
+  transform: scaleY(1.5);  /* 1.5x lebih tinggi */
+  transform: scaleY(0.8);  /* 0.8x lebih pendek */
+  
+  /* Scale X dan Y */
+  transform: scale(2, 1.5);    /* 2x lebar, 1.5x tinggi */
+  transform: scale(0.5, 0.8);  /* 0.5x lebar, 0.8x tinggi */
+  
+  /* Scale uniform */
+  transform: scale(2);     /* 2x lebih besar */
+  transform: scale(0.5);   /* 0.5x lebih kecil */
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-cut"></i> Skew</h2>
+              <p>Skew membuat elemen miring atau condong.</p>
+              
+              <div class="code-example">
+                <h3>CSS Skew:</h3>
+                <pre><code>.element {
+  /* Skew X (horizontal) */
+  transform: skewX(20deg);
+  transform: skewX(-15deg);
+  
+  /* Skew Y (vertical) */
+  transform: skewY(10deg);
+  transform: skewY(-5deg);
+  
+  /* Skew X dan Y */
+  transform: skew(20deg, 10deg);
+  transform: skew(-15deg, -5deg);
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-layer-group"></i> Multiple Transforms</h2>
+              <p>Kita bisa menggabungkan beberapa transform dalam satu property.</p>
+              
+              <div class="code-example">
+                <h3>Multiple Transforms:</h3>
+                <pre><code>.element {
+  /* Multiple transforms */
+  transform: translateX(50px) rotate(45deg) scale(1.2);
+  transform: translate(20px, 30px) rotate(-30deg) skewX(10deg);
+  
+  /* Transform origin */
+  transform-origin: center;
+  transform-origin: top left;
+  transform-origin: 50% 50%;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              <ol>
+                <li>Buat hover effects dengan translate dan scale</li>
+                <li>Eksperimen dengan rotate untuk membuat loading spinner</li>
+                <li>Buat card flip effect dengan rotateY</li>
+                <li>Praktikkan transform origin untuk animasi yang lebih natural</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="translate">Translate</option>
+                    <option value="rotate">Rotate</option>
+                    <option value="scale">Scale</option>
+                    <option value="skew">Skew</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

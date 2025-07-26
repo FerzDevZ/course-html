@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 22: Project Portfolio</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 22: Project Portfolio</h1>
+            <p class="module-subtitle">Buat portfolio website profesional dengan HTML dan CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-briefcase"></i> Portfolio Website</h2>
+              <p>Portfolio website adalah cara terbaik untuk menampilkan skill dan karya kamu kepada dunia. Website ini akan menjadi showcase profesional kamu.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-gallery"></i> Portfolio = Galeri Seni</h4>
+                    <p>Seperti galeri seni yang menampilkan karya terbaik seniman, portfolio website menampilkan karya terbaik kamu sebagai developer.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-resume"></i> Portfolio = CV Digital</h4>
+                    <p>Portfolio adalah CV digital yang interaktif dan menarik, lebih dari sekadar dokumen statis.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-list"></i> Struktur Portfolio</h2>
+              <div class="topology-section">
+                <h3><i class="fas fa-sitemap"></i> Komponen Portfolio</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <h4>Header</h4>
+                    <p>Navigation, logo, dan hero section</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>About</h4>
+                    <p>Informasi pribadi dan skill</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Projects</h4>
+                    <p>Showcase karya terbaik</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Contact</h4>
+                    <p>Informasi kontak dan social media</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> HTML Structure</h2>
+              <div class="code-example">
+                <h3>Struktur HTML Portfolio:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Portfolio Saya&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="header"&gt;
+    &lt;nav class="navbar"&gt;
+      &lt;div class="logo"&gt;Portfolio&lt;/div&gt;
+      &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;section id="home" class="hero"&gt;
+    &lt;div class="hero-content"&gt;
+      &lt;h1&gt;Halo, saya [Nama]&lt;/h1&gt;
+      &lt;p&gt;Web Developer & Designer&lt;/p&gt;
+      &lt;button class="cta-button"&gt;Lihat Karya&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section id="about" class="about"&gt;
+    &lt;h2&gt;Tentang Saya&lt;/h2&gt;
+    &lt;div class="about-content"&gt;
+      &lt;div class="about-text"&gt;
+        &lt;p&gt;Deskripsi tentang diri kamu...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="skills"&gt;
+        &lt;h3&gt;Skills&lt;/h3&gt;
+        &lt;div class="skill-tags"&gt;
+          &lt;span class="skill-tag"&gt;HTML&lt;/span&gt;
+          &lt;span class="skill-tag"&gt;CSS&lt;/span&gt;
+          &lt;span class="skill-tag"&gt;JavaScript&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section id="projects" class="projects"&gt;
+    &lt;h2&gt;Projects&lt;/h2&gt;
+    &lt;div class="project-grid"&gt;
+      &lt;div class="project-card"&gt;
+        &lt;img src="project1.jpg" alt="Project 1"&gt;
+        &lt;h3&gt;Project 1&lt;/h3&gt;
+        &lt;p&gt;Deskripsi project...&lt;/p&gt;
+        &lt;div class="project-links"&gt;
+          &lt;a href="#"&gt;Live Demo&lt;/a&gt;
+          &lt;a href="#"&gt;GitHub&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section id="contact" class="contact"&gt;
+    &lt;h2&gt;Contact&lt;/h2&gt;
+    &lt;div class="contact-info"&gt;
+      &lt;div class="contact-item"&gt;
+        &lt;i class="fas fa-envelope"&gt;&lt;/i&gt;
+        &lt;p&gt;email@example.com&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="contact-item"&gt;
+        &lt;i class="fas fa-phone"&gt;&lt;/i&gt;
+        &lt;p&gt;+62 123 456 789&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;footer class="footer"&gt;
+    &lt;p&gt;&copy; 2024 Portfolio. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-palette"></i> CSS Styling</h2>
+              <div class="code-example">
+                <h3>CSS untuk Portfolio:</h3>
+                <pre><code>/* Reset dan Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #0056b3;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Langkah-langkah Pembuatan</h2>
+              <ol>
+                <li>Buat struktur HTML dengan semantic tags</li>
+                <li>Desain layout dengan CSS Grid dan Flexbox</li>
+                <li>Tambahkan responsive design untuk mobile</li>
+                <li>Implementasikan smooth scrolling navigation</li>
+                <li>Tambahkan hover effects dan animations</li>
+                <li>Optimasi untuk SEO dan performance</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="portfolio">Portfolio Template</option>
+                    <option value="hero-section">Hero Section</option>
+                    <option value="project-grid">Project Grid</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

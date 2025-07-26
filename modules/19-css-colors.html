@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 19: CSS Colors</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 19: CSS Colors</h1>
+            <p class="module-subtitle">Pelajari penggunaan warna dalam CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-palette"></i> CSS Colors</h2>
+              <p>CSS menyediakan berbagai cara untuk mendefinisikan warna, dari nama warna sederhana hingga nilai hexadecimal dan RGB yang kompleks.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-paint-brush"></i> Colors = Cat</h4>
+                    <p>Seperti cat yang memiliki berbagai warna dan cara mencampur, CSS colors memiliki berbagai format dan cara mendefinisikan warna.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-rainbow"></i> Colors = Pelangi</h4>
+                    <p>Seperti pelangi yang memiliki spektrum warna, CSS colors memungkinkan kita menggunakan jutaan kombinasi warna.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tag"></i> Color Values</h2>
+              <div class="code-example">
+                <h3>Berbagai Format Warna:</h3>
+                <pre><code>/* Named Colors */
+.element {
+  color: red;
+  color: blue;
+  color: green;
+  color: transparent;
+}
+
+/* Hexadecimal */
+.element {
+  color: #ff0000; /* Red */
+  color: #00ff00; /* Green */
+  color: #0000ff; /* Blue */
+  color: #fff;    /* White */
+  color: #000;    /* Black */
+}
+
+/* RGB */
+.element {
+  color: rgb(255, 0, 0);     /* Red */
+  color: rgb(0, 255, 0);     /* Green */
+  color: rgb(0, 0, 255);     /* Blue */
+  color: rgb(255, 255, 255); /* White */
+}
+
+/* RGBA (with opacity) */
+.element {
+  color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+}
+
+/* HSL */
+.element {
+  color: hsl(0, 100%, 50%);    /* Red */
+  color: hsl(120, 100%, 50%);  /* Green */
+  color: hsl(240, 100%, 50%);  /* Blue */
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-gradient"></i> CSS Gradients</h2>
+              <p>Gradients memungkinkan transisi halus antara dua atau lebih warna.</p>
+              
+              <div class="code-example">
+                <h3>Linear Gradient:</h3>
+                <pre><code>/* Linear Gradient */
+.gradient {
+  background: linear-gradient(to right, red, blue);
+  background: linear-gradient(45deg, red, blue);
+  background: linear-gradient(to bottom, red, yellow, green);
+}
+
+/* Radial Gradient */
+.radial-gradient {
+  background: radial-gradient(circle, red, blue);
+  background: radial-gradient(ellipse, red, blue);
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-eye"></i> Color Theory</h2>
+              <p>Pemahaman dasar teori warna membantu dalam memilih kombinasi warna yang harmonis.</p>
+              
+              <div class="topology-section">
+                <h3><i class="fas fa-sitemap"></i> Color Wheel</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <h4>Primary Colors</h4>
+                    <p>Red, Blue, Yellow - warna dasar</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Secondary Colors</h4>
+                    <p>Green, Orange, Purple - campuran primary</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Complementary</h4>
+                    <p>Warna yang berlawanan di color wheel</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Analogous</h4>
+                    <p>Warna yang berdekatan di color wheel</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              <ol>
+                <li>Eksperimen dengan berbagai format warna (hex, rgb, hsl)</li>
+                <li>Buat gradient linear dan radial</li>
+                <li>Praktikkan color theory dengan complementary colors</li>
+                <li>Buat color scheme untuk website</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="colors">Color Values</option>
+                    <option value="gradients">Gradients</option>
+                    <option value="color-theory">Color Theory</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

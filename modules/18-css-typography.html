@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 18: CSS Typography</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 18: CSS Typography</h1>
+            <p class="module-subtitle">Pelajari styling teks dan tipografi dalam CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-font"></i> CSS Typography</h2>
+              <p>Typography adalah seni dan teknik mengatur teks agar mudah dibaca dan menarik secara visual. CSS menyediakan berbagai property untuk mengontrol tampilan teks.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-pen"></i> Typography = Tulisan Tangan</h4>
+                    <p>Seperti tulisan tangan yang memiliki gaya, ukuran, dan karakteristik berbeda, typography CSS mengatur bagaimana teks ditampilkan.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-book"></i> Typography = Buku</h4>
+                    <p>Seperti buku yang memiliki judul besar, sub-judul, dan teks body yang berbeda, typography membantu hierarki informasi.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-text-height"></i> Font Properties</h2>
+              <div class="code-example">
+                <h3>CSS Font Properties:</h3>
+                <pre><code>body {
+  /* Font Family */
+  font-family: 'Arial', sans-serif;
+  font-family: 'Times New Roman', serif;
+  font-family: 'Courier New', monospace;
+  
+  /* Font Size */
+  font-size: 16px;
+  font-size: 1.2rem;
+  font-size: 120%;
+  
+  /* Font Weight */
+  font-weight: normal;
+  font-weight: bold;
+  font-weight: 400;
+  font-weight: 700;
+  
+  /* Font Style */
+  font-style: normal;
+  font-style: italic;
+  font-style: oblique;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-align-left"></i> Text Properties</h2>
+              <div class="code-example">
+                <h3>CSS Text Properties:</h3>
+                <pre><code>h1 {
+  /* Text Alignment */
+  text-align: left;
+  text-align: center;
+  text-align: right;
+  text-align: justify;
+  
+  /* Text Decoration */
+  text-decoration: none;
+  text-decoration: underline;
+  text-decoration: line-through;
+  text-decoration: overline;
+  
+  /* Text Transform */
+  text-transform: none;
+  text-transform: uppercase;
+  text-transform: lowercase;
+  text-transform: capitalize;
+  
+  /* Line Height */
+  line-height: 1.5;
+  line-height: 24px;
+  
+  /* Letter Spacing */
+  letter-spacing: 2px;
+  letter-spacing: -1px;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-google"></i> Google Fonts</h2>
+              <p>Google Fonts menyediakan ribuan font gratis yang bisa digunakan di website.</p>
+              
+              <div class="code-example">
+                <h3>Cara Menggunakan Google Fonts:</h3>
+                <pre><code>&lt;!-- Di HTML head --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"&gt;
+
+/* Di CSS */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              <ol>
+                <li>Buat hierarki typography dengan heading yang berbeda</li>
+                <li>Eksperimen dengan berbagai font dari Google Fonts</li>
+                <li>Buat text styling dengan alignment dan decoration</li>
+                <li>Praktikkan responsive typography dengan rem/em</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="typography">Typography</option>
+                    <option value="google-fonts">Google Fonts</option>
+                    <option value="text-styling">Text Styling</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 24: Project Blog</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 24: Project Blog</h1>
+            <p class="module-subtitle">Buat blog website modern dengan HTML dan CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-blog"></i> Blog Website</h2>
+              <p>Blog website adalah platform untuk berbagi konten, artikel, dan informasi. Blog yang baik memiliki layout yang bersih, mudah dibaca, dan responsif.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-newspaper"></i> Blog = Koran Digital</h4>
+                    <p>Seperti koran yang memiliki layout yang terstruktur dengan headline, artikel, dan sidebar, blog website memiliki struktur yang serupa.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-book"></i> Blog = Buku Digital</h4>
+                    <p>Blog seperti buku digital yang memiliki bab-bab (artikel) yang terorganisir dengan baik dan mudah dinavigasi.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-list"></i> Struktur Blog</h2>
+              <div class="topology-section">
+                <h3><i class="fas fa-sitemap"></i> Komponen Blog</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <h4>Header</h4>
+                    <p>Logo, navigation, search bar</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Main Content</h4>
+                    <p>Artikel, post list, pagination</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Sidebar</h4>
+                    <p>Categories, recent posts, tags</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Footer</h4>
+                    <p>Social links, about, contact</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> HTML Structure</h2>
+              <div class="code-example">
+                <h3>Struktur HTML Blog:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Blog Saya&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="header"&gt;
+    &lt;nav class="navbar"&gt;
+      &lt;div class="logo"&gt;BlogKu&lt;/div&gt;
+      &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class="search-bar"&gt;
+        &lt;input type="text" placeholder="Cari artikel..."&gt;
+        &lt;button&gt;&lt;i class="fas fa-search"&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main class="main-content"&gt;
+    &lt;div class="container"&gt;
+      &lt;section class="blog-posts"&gt;
+        &lt;article class="post"&gt;
+          &lt;div class="post-image"&gt;
+            &lt;img src="post1.jpg" alt="Post 1"&gt;
+          &lt;/div&gt;
+          &lt;div class="post-content"&gt;
+            &lt;div class="post-meta"&gt;
+              &lt;span class="post-date"&gt;25 Juli 2024&lt;/span&gt;
+              &lt;span class="post-category"&gt;Technology&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;h2 class="post-title"&gt;Judul Artikel Pertama&lt;/h2&gt;
+            &lt;p class="post-excerpt"&gt;
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+            &lt;/p&gt;
+            &lt;div class="post-footer"&gt;
+              &lt;a href="#" class="read-more"&gt;Baca Selengkapnya&lt;/a&gt;
+              &lt;div class="post-tags"&gt;
+                &lt;span class="tag"&gt;HTML&lt;/span&gt;
+                &lt;span class="tag"&gt;CSS&lt;/span&gt;
+                &lt;span class="tag"&gt;Web Design&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+
+        &lt;article class="post"&gt;
+          &lt;div class="post-image"&gt;
+            &lt;img src="post2.jpg" alt="Post 2"&gt;
+          &lt;/div&gt;
+          &lt;div class="post-content"&gt;
+            &lt;div class="post-meta"&gt;
+              &lt;span class="post-date"&gt;24 Juli 2024&lt;/span&gt;
+              &lt;span class="post-category"&gt;Design&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;h2 class="post-title"&gt;Judul Artikel Kedua&lt;/h2&gt;
+            &lt;p class="post-excerpt"&gt;
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+              laboris nisi ut aliquip ex ea commodo consequat...
+            &lt;/p&gt;
+            &lt;div class="post-footer"&gt;
+              &lt;a href="#" class="read-more"&gt;Baca Selengkapnya&lt;/a&gt;
+              &lt;div class="post-tags"&gt;
+                &lt;span class="tag"&gt;UI/UX&lt;/span&gt;
+                &lt;span class="tag"&gt;Design&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+      &lt;/section&gt;
+
+      &lt;aside class="sidebar"&gt;
+        &lt;div class="widget"&gt;
+          &lt;h3&gt;Kategori&lt;/h3&gt;
+          &lt;ul class="category-list"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Technology (5)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Design (3)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Programming (8)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tips & Tricks (12)&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="widget"&gt;
+          &lt;h3&gt;Artikel Terbaru&lt;/h3&gt;
+          &lt;div class="recent-posts"&gt;
+            &lt;div class="recent-post"&gt;
+              &lt;img src="thumb1.jpg" alt="Recent 1"&gt;
+              &lt;div class="recent-post-info"&gt;
+                &lt;h4&gt;Judul Artikel Terbaru&lt;/h4&gt;
+                &lt;span&gt;25 Juli 2024&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="recent-post"&gt;
+              &lt;img src="thumb2.jpg" alt="Recent 2"&gt;
+              &lt;div class="recent-post-info"&gt;
+                &lt;h4&gt;Artikel Lainnya&lt;/h4&gt;
+                &lt;span&gt;24 Juli 2024&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="widget"&gt;
+          &lt;h3&gt;Tags&lt;/h3&gt;
+          &lt;div class="tag-cloud"&gt;
+            &lt;span class="tag"&gt;HTML&lt;/span&gt;
+            &lt;span class="tag"&gt;CSS&lt;/span&gt;
+            &lt;span class="tag"&gt;JavaScript&lt;/span&gt;
+            &lt;span class="tag"&gt;Web Design&lt;/span&gt;
+            &lt;span class="tag"&gt;UI/UX&lt;/span&gt;
+            &lt;span class="tag"&gt;Responsive&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;footer class="footer"&gt;
+    &lt;div class="footer-content"&gt;
+      &lt;div class="footer-section"&gt;
+        &lt;h3&gt;Tentang BlogKu&lt;/h3&gt;
+        &lt;p&gt;Blog tentang teknologi, desain, dan programming.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="footer-section"&gt;
+        &lt;h3&gt;Social Media&lt;/h3&gt;
+        &lt;div class="social-links"&gt;
+          &lt;a href="#"&gt;&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href="#"&gt;&lt;i class="fab fa-facebook"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;a href="#"&gt;&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-bottom"&gt;
+      &lt;p&gt;&copy; 2024 BlogKu. All rights reserved.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-palette"></i> CSS Styling</h2>
+              <div class="code-example">
+                <h3>CSS untuk Blog:</h3>
+                <pre><code>/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* Blog Posts */
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.post:hover .post-image img {
+  transform: scale(1.05);
+}
+
+.post-content {
+  padding: 1.5rem;
+}
+
+.post-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.post-category {
+  background: #007bff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.post-excerpt {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.read-more {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.read-more:hover {
+  background: #0056b3;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f8f9fa;
+  color: #666;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.widget {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.widget h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.category-list li {
+  margin-bottom: 0.5rem;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: #666;
+  padding: 0.5rem;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.category-list a:hover {
+  background: #f8f9fa;
+  color: #007bff;
+}
+
+.recent-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recent-post {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.recent-post img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.recent-post-info h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.recent-post-info span {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-cloud .tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: background 0.3s;
+}
+
+.tag-cloud .tag:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  margin-top: 3rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .post-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Fitur Blog yang Harus Ada</h2>
+              <ol>
+                <li>Layout responsive dengan grid system</li>
+                <li>Artikel dengan featured image</li>
+                <li>Sidebar dengan widgets</li>
+                <li>Category dan tag system</li>
+                <li>Search functionality</li>
+                <li>Pagination untuk artikel</li>
+                <li>Social media integration</li>
+                <li>SEO optimization</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="blog">Blog Layout</option>
+                    <option value="post-card">Post Card</option>
+                    <option value="sidebar">Sidebar Widgets</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 

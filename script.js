@@ -850,45 +850,41 @@ function changePlaygroundTemplate() {
   playgroundEditor.setValue(getDefaultCode(template));
 }
 
-// ===== MODULE DATA =====
-const moduleData = {
-  html: [
-    { id: '01', file: '01-pengenalan-html.html', title: 'Pengenalan HTML', icon: 'fas fa-info-circle' },
-    { id: '02', file: '02-struktur-dasar-html.html', title: 'Struktur Dasar HTML', icon: 'fas fa-code' },
-    { id: '03', file: '03-heading-paragraf.html', title: 'Heading & Paragraf', icon: 'fas fa-heading' },
-    { id: '04', file: '04-list.html', title: 'List (Daftar)', icon: 'fas fa-list' },
-    { id: '05', file: '05-link-navigasi.html', title: 'Link & Navigasi', icon: 'fas fa-link' },
-    { id: '06', file: '06-gambar-multimedia.html', title: 'Gambar & Multimedia', icon: 'fas fa-image' },
-    { id: '07', file: '07-table.html', title: 'Tabel', icon: 'fas fa-table' },
-    { id: '08', file: '08-form.html', title: 'Formulir (Form)', icon: 'fas fa-wpforms' },
-    { id: '09', file: '09-semantic.html', title: 'Semantic HTML', icon: 'fas fa-tags' },
-    { id: '10', file: '10-html5-api.html', title: 'HTML5 API', icon: 'fas fa-cogs' },
-    { id: '11', file: '11-best-practice-seo.html', title: 'Best Practice & SEO', icon: 'fas fa-search' },
-    { id: '12', file: '12-html-advanced.html', title: 'HTML Lanjutan', icon: 'fas fa-rocket' },
-    { id: '13', file: '13-accessibility.html', title: 'Aksesibilitas', icon: 'fas fa-universal-access' },
-    { id: '14', file: '14-html-validation.html', title: 'Validasi HTML', icon: 'fas fa-check-circle' }
-  ],
-  css: [
-    { id: '15', file: '15-pengenalan-css.html', title: 'Pengenalan CSS', icon: 'fas fa-palette' },
-    { id: '16', file: '16-selector-css.html', title: 'CSS Selector', icon: 'fas fa-crosshairs' },
-    { id: '17', file: '17-box-model.html', title: 'Box Model', icon: 'fas fa-square' },
-    { id: '18', file: '18-layout-css.html', title: 'Layout CSS', icon: 'fas fa-th-large' },
-    { id: '19', file: '19-flexbox.html', title: 'Flexbox', icon: 'fas fa-arrows-alt-h' },
-    { id: '20', file: '20-css-grid.html', title: 'CSS Grid', icon: 'fas fa-border-all' },
-    { id: '21', file: '21-responsive-design.html', title: 'Responsive Design', icon: 'fas fa-mobile-alt' },
-    { id: '22', file: '22-css-animation.html', title: 'CSS Animation', icon: 'fas fa-magic' },
-    { id: '23', file: '23-css-transforms.html', title: 'CSS Transforms', icon: 'fas fa-sync' },
-    { id: '24', file: '24-css-variables.html', title: 'CSS Variables', icon: 'fas fa-database' },
-    { id: '25', file: '25-css-preprocessors.html', title: 'CSS Preprocessors', icon: 'fas fa-code-branch' }
-  ],
-  projects: [
-    { id: '26', file: '26-project-landing-page.html', title: 'Landing Page', icon: 'fas fa-home' },
-    { id: '27', file: '27-project-portfolio.html', title: 'Portfolio Website', icon: 'fas fa-briefcase' },
-    { id: '28', file: '28-project-blog.html', title: 'Blog Website', icon: 'fas fa-blog' },
-    { id: '29', file: '29-project-ecommerce.html', title: 'E-commerce Page', icon: 'fas fa-shopping-cart' },
-    { id: '30', file: '30-project-dashboard.html', title: 'Admin Dashboard', icon: 'fas fa-chart-bar' }
-  ]
-};
+// ===== MODULE DATA (AUTO-GENERATED) =====
+// Fungsi untuk mengelompokkan file modul berdasarkan nomor dan kategori
+function getAllModules() {
+  // Daftar file dari hasil list_dir
+  const files = [
+    '01-pengenalan-html.html','02-struktur-dasar-html.html','03-heading-paragraf.html','04-list.html','05-link-navigasi.html','06-gambar-multimedia.html','07-table.html','08-form.html','09-semantic.html','10-html5-api.html','11-best-practice-seo.html','12-html-advanced.html','13-css-layout.html','14-css-responsive.html','15-pengenalan-css.html','16-selector-css.html','17-css-box-model.html','18-css-typography.html','19-css-colors.html','20-css-animations.html','21-css-transforms.html','22-project-portfolio.html','23-project-ecommerce.html','24-project-blog.html','25-modul.html','26-modul.html','27-modul.html','28-modul.html','29-modul.html','30-modul.html','31-modul.html','32-modul.html','33-modul.html','34-modul.html','35-modul.html','36-modul.html','37-modul.html','38-modul.html','39-modul.html','40-modul.html','41-modul.html','42-modul.html','43-modul.html','44-modul.html','45-modul.html','46-modul.html','47-modul.html','48-modul.html','49-modul.html','50-modul.html','26-project-landing-page.html','17-css-box-model.html','18-css-typography.html','19-css-colors.html','20-css-animations.html','21-css-transforms.html','22-project-portfolio.html','23-project-ecommerce.html','24-project-blog.html','15-pengenalan-css.html','16-selector-css.html'
+  ];
+  // Hilangkan duplikat
+  const uniqueFiles = [...new Set(files)];
+  // Urutkan berdasarkan nomor di depan nama file
+  uniqueFiles.sort((a, b) => {
+    const numA = parseInt(a);
+    const numB = parseInt(b);
+    return numA - numB;
+  });
+  // Mapping ke objek modul
+  return uniqueFiles.map(file => {
+    const match = file.match(/^(\d+)-([\w-]+)\.html$/);
+    let id = file;
+    let title = file;
+    let category = 'Lainnya';
+    if (match) {
+      id = match[1];
+      // Judul otomatis dari nama file
+      title = match[2].replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      // Kategori otomatis
+      if (id <= 14) category = 'HTML';
+      else if (id <= 25) category = 'CSS';
+      else if (id <= 30) category = 'Project';
+      else if (id <= 40) category = 'Challenge';
+      else category = 'Lainnya';
+    }
+    return { id, file, title, category };
+  });
+}
 
 // ===== PROGRESS TRACKING =====
 let userProgress = JSON.parse(localStorage.getItem('userProgress')) || {
@@ -905,7 +901,7 @@ function updateProgress(moduleId) {
 }
 
 function updateProgressUI() {
-  const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
+  const allModules = getAllModules();
   const completedCount = userProgress.completed.length;
   const totalCount = allModules.length;
   const progressPercentage = Math.round((completedCount / totalCount) * 100);
@@ -934,42 +930,29 @@ function updateModuleCompletionStatus() {
   });
 }
 
-// ===== SIDEBAR GENERATION =====
+// ===== SIDEBAR GENERATION (AUTO) =====
 function generateSidebar() {
-  // Generate HTML modules
+  const allModules = getAllModules();
+  // Kelompokkan per kategori
+  const categories = ['HTML', 'CSS', 'Project', 'Challenge', 'Lainnya'];
+  const lists = {};
+  categories.forEach(cat => lists[cat] = []);
+  allModules.forEach(mod => lists[mod.category].push(mod));
+
+  // Generate HTML
   const htmlList = document.getElementById('module-list');
-  htmlList.innerHTML = moduleData.html.map(module => `
-    <li>
-      <a href="modules/${module.file}" data-module-id="${module.id}">
-        <i class="${module.icon}"></i>
-        <span>${module.id}. ${module.title}</span>
-      </a>
-    </li>
+  htmlList.innerHTML = lists['HTML'].map(module => `
+    <li><a href="modules/${module.file}" data-module-id="${module.id}">${module.id}. ${module.title}</a></li>
   `).join('');
-
-  // Generate CSS modules
   const cssList = document.getElementById('css-module-list');
-  cssList.innerHTML = moduleData.css.map(module => `
-    <li>
-      <a href="modules/${module.file}" data-module-id="${module.id}">
-        <i class="${module.icon}"></i>
-        <span>${module.id}. ${module.title}</span>
-      </a>
-    </li>
+  cssList.innerHTML = lists['CSS'].map(module => `
+    <li><a href="modules/${module.file}" data-module-id="${module.id}">${module.id}. ${module.title}</a></li>
   `).join('');
-
-  // Generate Project modules
   const projectList = document.getElementById('project-module-list');
-  projectList.innerHTML = moduleData.projects.map(module => `
-    <li>
-      <a href="modules/${module.file}" data-module-id="${module.id}">
-        <i class="${module.icon}"></i>
-        <span>${module.id}. ${module.title}</span>
-      </a>
-    </li>
+  projectList.innerHTML = lists['Project'].map(module => `
+    <li><a href="modules/${module.file}" data-module-id="${module.id}">${module.id}. ${module.title}</a></li>
   `).join('');
-
-  // Add click handlers
+  // Challenge & Lainnya bisa ditambahkan jika ingin
   addModuleClickHandlers();
 }
 
@@ -991,63 +974,59 @@ function addModuleClickHandlers() {
   });
 }
 
-// ===== MODULE NAVIGATION =====
+// ===== NAVIGATION & PROGRESS (AUTO) =====
 function getCurrentModuleIndex() {
   const path = window.location.pathname.split('/').pop();
-  const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
+  const allModules = getAllModules();
   return allModules.findIndex(m => m.file === path);
 }
-
-function updateSidebarActive() {
-  const path = window.location.pathname.split('/').pop();
-  const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
-  const currentModule = allModules.find(m => m.file === path);
-  
-  if (currentModule) {
-    // Remove all active classes
-    document.querySelectorAll('.nav-section a').forEach(link => {
-      link.classList.remove('active');
-    });
-    
-    // Add active class to current module
-    const activeLink = document.querySelector(`[data-module-id="${currentModule.id}"]`);
-    if (activeLink) {
-      activeLink.classList.add('active');
-    }
-    
-    // Update progress
-    updateProgress(currentModule.id);
-  }
-}
-
 function generateModuleNavigation() {
   const idx = getCurrentModuleIndex();
   if (idx === -1) return;
-  
-  const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
+  const allModules = getAllModules();
   const prev = allModules[idx - 1];
   const next = allModules[idx + 1];
-  
   const navDiv = document.getElementById('module-navigation');
   if (!navDiv) return;
-  
   navDiv.innerHTML = `
     <div class="module-navigation">
-      ${prev ? `
-        <a href="${prev.file}" class="nav-button">
-          <i class="fas fa-chevron-left"></i>
-          ${prev.title}
-        </a>
-      ` : '<span></span>'}
-      
-      ${next ? `
-        <a href="${next.file}" class="nav-button">
-          ${next.title}
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      ` : '<span></span>'}
+      ${prev ? `<a href="${prev.file}" class="nav-button"><i class="fas fa-chevron-left"></i> ${prev.title}</a>` : '<span></span>'}
+      ${next ? `<a href="${next.file}" class="nav-button">${next.title} <i class="fas fa-chevron-right"></i></a>` : '<span></span>'}
     </div>
   `;
+}
+function updateSidebarActive() {
+  const path = window.location.pathname.split('/').pop();
+  const allModules = getAllModules();
+  const currentModule = allModules.find(m => m.file === path);
+  if (currentModule) {
+    document.querySelectorAll('.nav-section a').forEach(link => link.classList.remove('active'));
+    const activeLink = document.querySelector(`[data-module-id="${currentModule.id}"]`);
+    if (activeLink) activeLink.classList.add('active');
+    updateProgress(currentModule.id);
+  }
+}
+function updateProgressUI() {
+  const allModules = getAllModules();
+  const completedCount = userProgress.completed.length;
+  const totalCount = allModules.length;
+  const progressPercentage = Math.round((completedCount / totalCount) * 100);
+  document.getElementById('progress-text').textContent = `${progressPercentage}%`;
+  document.getElementById('progress-fill').style.width = `${progressPercentage}%`;
+  document.getElementById('completed-count').textContent = completedCount;
+  document.getElementById('total-count').textContent = totalCount;
+  updateModuleCompletionStatus();
+}
+function updateModuleCompletionStatus() {
+  const allLinks = document.querySelectorAll('.nav-section a');
+  allLinks.forEach(link => {
+    const moduleId = link.getAttribute('data-module-id');
+    if (moduleId && userProgress.completed.includes(moduleId)) {
+      link.classList.add('completed');
+    } else {
+      link.classList.remove('completed');
+    }
+  });
 }
 
 // ===== UTILITY FUNCTIONS =====
@@ -1106,7 +1085,7 @@ document.addEventListener('keydown', (e) => {
   // Arrow keys for navigation (only on module pages)
   if (window.location.pathname.includes('modules/')) {
     const idx = getCurrentModuleIndex();
-    const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
+    const allModules = getAllModules();
     
     if (e.key === 'ArrowLeft' && idx > 0) {
       window.location.href = allModules[idx - 1].file;
@@ -1120,7 +1099,7 @@ document.addEventListener('keydown', (e) => {
 window.addEventListener('beforeunload', () => {
   const currentModule = getCurrentModuleIndex();
   if (currentModule !== -1) {
-    const allModules = [...moduleData.html, ...moduleData.css, ...moduleData.projects];
+    const allModules = getAllModules();
     const moduleId = allModules[currentModule].id;
     updateProgress(moduleId);
   }

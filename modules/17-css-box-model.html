@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 17: CSS Box Model</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list"></ul>
+        </div>
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list"></ul>
+        </div>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">Modul 17: CSS Box Model</h1>
+            <p class="module-subtitle">Pelajari konsep dasar box model dalam CSS</p>
+          </div>
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-cube"></i> Apa itu CSS Box Model?</h2>
+              <p>CSS Box Model adalah konsep fundamental dalam CSS yang menjelaskan bagaimana setiap elemen HTML diperlakukan sebagai kotak dengan content, padding, border, dan margin.</p>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-gift"></i> Box Model = Kotak Hadiah</h4>
+                    <p>Seperti kotak hadiah yang memiliki hadiah di dalam (content), bungkus kertas (padding), pita (border), dan ruang antar kotak (margin).</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4><i class="fas fa-house"></i> Box Model = Rumah</h4>
+                    <p>Seperti rumah dengan ruangan dalam (content), dinding dalam (padding), dinding luar (border), dan halaman (margin).</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-layers"></i> Komponen Box Model</h2>
+              <div class="topology-section">
+                <h3><i class="fas fa-sitemap"></i> Topologi Box Model</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <h4>Content</h4>
+                    <p>Area yang berisi teks, gambar, atau elemen lainnya</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Padding</h4>
+                    <p>Ruang kosong di dalam border, antara content dan border</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Border</h4>
+                    <p>Garis yang mengelilingi padding dan content</p>
+                  </div>
+                  <div class="topology-item">
+                    <h4>Margin</h4>
+                    <p>Ruang kosong di luar border, antara elemen</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> Contoh CSS Box Model</h2>
+              <div class="code-example">
+                <h3>CSS Box Model Properties:</h3>
+                <pre><code>.box {
+  /* Content */
+  width: 200px;
+  height: 100px;
+  
+  /* Padding */
+  padding: 20px;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  
+  /* Border */
+  border: 2px solid #333;
+  border-radius: 8px;
+  
+  /* Margin */
+  margin: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-calculator"></i> Box Sizing</h2>
+              <p>Property <code>box-sizing</code> menentukan bagaimana width dan height dihitung.</p>
+              
+              <div class="code-example">
+                <h3>Box Sizing Properties:</h3>
+                <pre><code>/* Default - content-box */
+.element {
+  box-sizing: content-box;
+  width: 200px; /* Hanya content */
+  padding: 20px; /* Ditambah ke width */
+  border: 2px solid black; /* Ditambah ke width */
+  /* Total width = 200 + 40 + 4 = 244px */
+}
+
+/* Border-box */
+.element {
+  box-sizing: border-box;
+  width: 200px; /* Termasuk padding dan border */
+  padding: 20px;
+  border: 2px solid black;
+  /* Total width = 200px (fixed) */
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              <ol>
+                <li>Buat elemen dengan padding, border, dan margin yang berbeda</li>
+                <li>Eksperimen dengan box-sizing content-box vs border-box</li>
+                <li>Buat layout dengan margin auto untuk centering</li>
+                <li>Coba negative margin untuk efek overlap</li>
+              </ol>
+            </section>
+
+            <div id="code-playground">
+              <div class="playground-controls">
+                <div class="control-group">
+                  <label for="playground-template">Template:</label>
+                  <select id="playground-template" onchange="changePlaygroundTemplate()">
+                    <option value="box-model">Box Model</option>
+                    <option value="box-sizing">Box Sizing</option>
+                    <option value="margin-padding">Margin & Padding</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <button onclick="runPlaygroundCode()" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Jalankan
+                  </button>
+                  <button onclick="resetPlaygroundCode()" class="btn btn-secondary">
+                    <i class="fas fa-undo"></i> Reset
+                  </button>
+                  <button onclick="togglePlaygroundFullscreen()" class="btn btn-secondary">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div class="playground-editor">
+                <div id="monaco-editor"></div>
+                <div id="playground-output"></div>
+              </div>
+            </div>
+
+            <div id="module-navigation"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html> 
