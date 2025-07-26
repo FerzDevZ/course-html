@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15. Pengenalan CSS - HTML & CSS Course</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list">
+            <!-- Modul akan di-generate otomatis dari JavaScript -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list">
+            <!-- Modul CSS akan di-generate otomatis -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list">
+            <!-- Proyek akan di-generate otomatis -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">15. Pengenalan CSS</h1>
+            <p class="module-subtitle">Pelajari dasar-dasar CSS untuk styling website</p>
+          </div>
+
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-info-circle"></i> Apa itu CSS?</h2>
+              <p>
+                CSS (Cascading Style Sheets) adalah bahasa styling yang digunakan untuk mengatur tampilan 
+                dan format dokumen HTML. CSS memisahkan konten (HTML) dari presentasi (styling), 
+                sehingga website menjadi lebih mudah dikelola dan dipelihara.
+              </p>
+              
+              <div class="info-card">
+                <h3><i class="fas fa-lightbulb"></i> Mengapa CSS Penting?</h3>
+                <ul>
+                  <li><strong>Konsistensi:</strong> Memastikan tampilan seragam di seluruh website</li>
+                  <li><strong>Maintainability:</strong> Mudah mengubah style tanpa mengubah HTML</li>
+                  <li><strong>Responsiveness:</strong> Website dapat menyesuaikan dengan berbagai ukuran layar</li>
+                  <li><strong>Performance:</strong> File CSS dapat di-cache browser</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> Cara Menambahkan CSS</h2>
+              
+              <h3>1. Inline CSS</h3>
+              <p>CSS ditulis langsung dalam atribut style elemen HTML:</p>
+              <pre><code>&lt;h1 style="color: blue; font-size: 24px;"&gt;Judul Biru&lt;/h1&gt;</code></pre>
+              
+              <h3>2. Internal CSS</h3>
+              <p>CSS ditulis dalam tag &lt;style&gt; di bagian &lt;head&gt;:</p>
+              <pre><code>&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: blue;
+      font-size: 24px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+              
+              <h3>3. External CSS (Direkomendasikan)</h3>
+              <p>CSS ditulis dalam file terpisah dan di-link ke HTML:</p>
+              <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-palette"></i> Sintaks CSS</h2>
+              <p>CSS terdiri dari selector dan declaration block:</p>
+              
+              <div class="code-example">
+                <h3>Struktur Dasar CSS:</h3>
+                <pre><code>selector {
+  property: value;
+  property: value;
+}</code></pre>
+              </div>
+              
+              <div class="example-card">
+                <h3><i class="fas fa-play"></i> Contoh Praktis:</h3>
+                <pre><code>h1 {
+  color: #2563eb;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}</code></pre>
+                
+                <div class="demo-result">
+                  <h4>Hasil:</h4>
+                  <div style="color: #2563eb; font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 1rem;">
+                    Judul dengan CSS
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-crosshairs"></i> Jenis-jenis Selector</h2>
+              
+              <div class="selector-grid">
+                <div class="selector-card">
+                  <h3>Element Selector</h3>
+                  <pre><code>p {
+  color: red;
+}</code></pre>
+                  <p>Mengatur semua elemen &lt;p&gt;</p>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Class Selector</h3>
+                  <pre><code>.highlight {
+  background: yellow;
+}</code></pre>
+                  <p>Mengatur elemen dengan class="highlight"</p>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>ID Selector</h3>
+                  <pre><code>#header {
+  background: blue;
+}</code></pre>
+                  <p>Mengatur elemen dengan id="header"</p>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Descendant Selector</h3>
+                  <pre><code>div p {
+  margin: 10px;
+}</code></pre>
+                  <p>Mengatur &lt;p&gt; yang ada di dalam &lt;div&gt;</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-paint-brush"></i> Property CSS Dasar</h2>
+              
+              <div class="property-table">
+                <h3>Property Warna dan Teks:</h3>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Fungsi</th>
+                      <th>Contoh</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>color</code></td>
+                      <td>Warna teks</td>
+                      <td><code>color: red;</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>background-color</code></td>
+                      <td>Warna latar belakang</td>
+                      <td><code>background-color: #f0f0f0;</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>font-size</code></td>
+                      <td>Ukuran font</td>
+                      <td><code>font-size: 16px;</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>font-family</code></td>
+                      <td>Jenis font</td>
+                      <td><code>font-family: Arial, sans-serif;</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>text-align</code></td>
+                      <td>Perataan teks</td>
+                      <td><code>text-align: center;</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h2>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-brain"></i> CSS Seperti Mengatur Rumah</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4>🏠 HTML = Struktur Rumah</h4>
+                    <p>HTML seperti kerangka rumah - dinding, pintu, jendela. Memberikan struktur dasar tanpa dekorasi.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4>🎨 CSS = Dekorasi & Cat</h4>
+                    <p>CSS seperti cat dinding, furniture, dan dekorasi. Membuat rumah terlihat indah dan nyaman.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4>🔧 JavaScript = Listrik & Air</h4>
+                    <p>JavaScript seperti sistem listrik dan air - membuat rumah berfungsi dan interaktif.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-sitemap"></i> Topologi CSS</h2>
+              
+              <div class="topology-section">
+                <h3><i class="fas fa-project-diagram"></i> Bagaimana CSS Bekerja</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <div class="topology-icon">📝</div>
+                    <h4>CSS File</h4>
+                    <p>File berisi aturan styling yang ditulis developer</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">🌐</div>
+                    <h4>Browser</h4>
+                    <p>Browser membaca dan memproses CSS rules</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">🎯</div>
+                    <h4>Selector</h4>
+                    <p>Menentukan elemen mana yang akan di-style</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">✨</div>
+                    <h4>Rendering</h4>
+                    <p>Browser menerapkan style ke elemen HTML</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> Code Playground</h2>
+              
+              <p>Praktik langsung dengan editor kode interaktif di bawah ini. Edit kode dan lihat hasilnya secara real-time!</p>
+              
+              <div id="code-playground">
+                <!-- Playground akan di-load otomatis -->
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              
+              <div class="exercise-card">
+                <h3>Latihan 1: Styling Paragraf</h3>
+                <p>Buat file CSS untuk mengatur tampilan paragraf dengan ketentuan:</p>
+                <ul>
+                  <li>Warna teks: biru (#2563eb)</li>
+                  <li>Ukuran font: 18px</li>
+                  <li>Jarak antar baris: 1.6</li>
+                  <li>Margin bawah: 20px</li>
+                </ul>
+                
+                <details>
+                  <summary>Lihat Solusi</summary>
+                  <pre><code>p {
+  color: #2563eb;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}</code></pre>
+                </details>
+              </div>
+              
+              <div class="exercise-card">
+                <h3>Latihan 2: Styling Heading</h3>
+                <p>Buat style untuk heading h1 dengan ketentuan:</p>
+                <ul>
+                  <li>Warna: hijau (#10b981)</li>
+                  <li>Ukuran: 2.5rem</li>
+                  <li>Font weight: bold</li>
+                  <li>Perataan: center</li>
+                </ul>
+                
+                <details>
+                  <summary>Lihat Solusi</summary>
+                  <pre><code>h1 {
+  color: #10b981;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+}</code></pre>
+                </details>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-road"></i> Learning Path</h2>
+              
+              <div class="learning-path">
+                <h3><i class="fas fa-map"></i> Jalan Menuju CSS Master</h3>
+                <div class="path-steps">
+                  <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Dasar CSS</h4>
+                      <p>Pelajari selector, property, dan nilai dasar</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Box Model</h4>
+                      <p>Pahami margin, padding, border, dan content</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Layout</h4>
+                      <p>Pelajari Flexbox dan CSS Grid</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      <h4>Responsive</h4>
+                      <p>Buat website yang responsif</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                      <h4>Advanced</h4>
+                      <p>Animasi, transforms, dan optimasi</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-exclamation-triangle"></i> Best Practices</h2>
+              
+              <div class="tips-grid">
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Gunakan External CSS</h3>
+                  <p>Pisahkan CSS dalam file terpisah untuk maintainability yang lebih baik.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Gunakan Nama yang Deskriptif</h3>
+                  <p>Beri nama class dan ID yang jelas dan mudah dipahami.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Gunakan CSS Variables</h3>
+                  <p>Manfaatkan CSS custom properties untuk konsistensi warna dan ukuran.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Optimalkan Selector</h3>
+                  <p>Gunakan selector yang spesifik dan efisien untuk performa yang lebih baik.</p>
+                </div>
+              </div>
+            </section>
+
+            <div id="module-navigation">
+              <!-- Navigation akan di-generate otomatis -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html> 

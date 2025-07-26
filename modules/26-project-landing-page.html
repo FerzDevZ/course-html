@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>26. Proyek: Landing Page - HTML & CSS Course</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list">
+            <!-- Modul akan di-generate otomatis dari JavaScript -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list">
+            <!-- Modul CSS akan di-generate otomatis -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list">
+            <!-- Proyek akan di-generate otomatis -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">26. Proyek: Landing Page</h1>
+            <p class="module-subtitle">Buat landing page modern dan responsif dengan HTML & CSS</p>
+          </div>
+
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-rocket"></i> Overview Proyek</h2>
+              <p>
+                Dalam proyek ini, kita akan membuat landing page modern untuk sebuah startup teknologi. 
+                Landing page ini akan mencakup semua elemen penting seperti hero section, fitur-fitur, 
+                testimonial, dan call-to-action yang efektif.
+              </p>
+              
+              <div class="info-card">
+                <h3><i class="fas fa-target"></i> Tujuan Pembelajaran</h3>
+                <ul>
+                  <li>Menguasai layout modern dengan Flexbox dan CSS Grid</li>
+                  <li>Membuat desain responsif untuk berbagai ukuran layar</li>
+                  <li>Mengimplementasikan animasi dan transisi CSS</li>
+                  <li>Mengoptimalkan UX dengan navigasi yang intuitif</li>
+                  <li>Menggunakan CSS variables untuk konsistensi desain</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-list-check"></i> Struktur Landing Page</h2>
+              
+              <div class="project-structure">
+                <h3>Komponen yang akan dibuat:</h3>
+                <ol>
+                  <li><strong>Header/Navigation</strong> - Menu navigasi responsif</li>
+                  <li><strong>Hero Section</strong> - Bagian utama dengan headline dan CTA</li>
+                  <li><strong>Features Section</strong> - Fitur-fitur produk</li>
+                  <li><strong>About Section</strong> - Informasi tentang perusahaan</li>
+                  <li><strong>Testimonials</strong> - Ulasan pelanggan</li>
+                  <li><strong>Pricing Section</strong> - Paket harga</li>
+                  <li><strong>Contact Section</strong> - Formulir kontak</li>
+                  <li><strong>Footer</strong> - Informasi tambahan dan social links</li>
+                </ol>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> HTML Structure</h2>
+              
+              <div class="code-example">
+                <h3>Struktur HTML Dasar:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;TechStartup - Solusi Teknologi Modern&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Header --&gt;
+  &lt;header class="header"&gt;
+    &lt;nav class="navbar"&gt;
+      &lt;div class="nav-container"&gt;
+        &lt;div class="nav-logo"&gt;
+          &lt;a href="#"&gt;TechStartup&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;ul class="nav-menu"&gt;
+          &lt;li&gt;&lt;a href="#home"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#features"&gt;Fitur&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#about"&gt;Tentang&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#pricing"&gt;Harga&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#contact"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class="hamburger"&gt;
+          &lt;span&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+          &lt;span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;!-- Hero Section --&gt;
+  &lt;section id="home" class="hero"&gt;
+    &lt;div class="hero-container"&gt;
+      &lt;div class="hero-content"&gt;
+        &lt;h1&gt;Solusi Teknologi untuk Masa Depan&lt;/h1&gt;
+        &lt;p&gt;Kami membantu bisnis Anda tumbuh dengan teknologi terdepan&lt;/p&gt;
+        &lt;div class="hero-buttons"&gt;
+          &lt;a href="#contact" class="btn btn-primary"&gt;Mulai Sekarang&lt;/a&gt;
+          &lt;a href="#features" class="btn btn-secondary"&gt;Pelajari Lebih Lanjut&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="hero-image"&gt;
+        &lt;img src="hero-image.jpg" alt="Tech Illustration"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Features Section --&gt;
+  &lt;section id="features" class="features"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Fitur Unggulan&lt;/h2&gt;
+      &lt;div class="features-grid"&gt;
+        &lt;div class="feature-card"&gt;
+          &lt;i class="fas fa-rocket"&gt;&lt;/i&gt;
+          &lt;h3&gt;Performa Tinggi&lt;/h3&gt;
+          &lt;p&gt;Optimasi untuk kecepatan maksimal&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="feature-card"&gt;
+          &lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;
+          &lt;h3&gt;Keamanan Terjamin&lt;/h3&gt;
+          &lt;p&gt;Proteksi data tingkat enterprise&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="feature-card"&gt;
+          &lt;i class="fas fa-mobile-alt"&gt;&lt;/i&gt;
+          &lt;h3&gt;Responsif&lt;/h3&gt;
+          &lt;p&gt;Berfungsi sempurna di semua perangkat&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- About Section --&gt;
+  &lt;section id="about" class="about"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="about-content"&gt;
+        &lt;div class="about-text"&gt;
+          &lt;h2&gt;Tentang Kami&lt;/h2&gt;
+          &lt;p&gt;TechStartup adalah perusahaan teknologi yang berfokus pada pengembangan 
+          solusi inovatif untuk bisnis modern. Dengan tim ahli dan teknologi terdepan, 
+          kami membantu klien mencapai tujuan bisnis mereka.&lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;✓ 5+ tahun pengalaman&lt;/li&gt;
+            &lt;li&gt;✓ 100+ proyek selesai&lt;/li&gt;
+            &lt;li&gt;✓ 24/7 support&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="about-image"&gt;
+          &lt;img src="about-image.jpg" alt="Team Working"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Pricing Section --&gt;
+  &lt;section id="pricing" class="pricing"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Paket Harga&lt;/h2&gt;
+      &lt;div class="pricing-grid"&gt;
+        &lt;div class="pricing-card"&gt;
+          &lt;h3&gt;Starter&lt;/h3&gt;
+          &lt;div class="price"&gt;Rp 99.000&lt;span&gt;/bulan&lt;/span&gt;&lt;/div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;5 GB Storage&lt;/li&gt;
+            &lt;li&gt;10 Proyek&lt;/li&gt;
+            &lt;li&gt;Email Support&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;Pilih Paket&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="pricing-card featured"&gt;
+          &lt;h3&gt;Professional&lt;/h3&gt;
+          &lt;div class="price"&gt;Rp 199.000&lt;span&gt;/bulan&lt;/span&gt;&lt;/div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;25 GB Storage&lt;/li&gt;
+            &lt;li&gt;Unlimited Proyek&lt;/li&gt;
+            &lt;li&gt;Priority Support&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;Pilih Paket&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="pricing-card"&gt;
+          &lt;h3&gt;Enterprise&lt;/h3&gt;
+          &lt;div class="price"&gt;Rp 499.000&lt;span&gt;/bulan&lt;/span&gt;&lt;/div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;100 GB Storage&lt;/li&gt;
+            &lt;li&gt;Unlimited Proyek&lt;/li&gt;
+            &lt;li&gt;24/7 Support&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;Pilih Paket&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Contact Section --&gt;
+  &lt;section id="contact" class="contact"&gt;
+    &lt;div class="container"&gt;
+      &lt;h2&gt;Hubungi Kami&lt;/h2&gt;
+      &lt;div class="contact-content"&gt;
+        &lt;div class="contact-info"&gt;
+          &lt;h3&gt;Informasi Kontak&lt;/h3&gt;
+          &lt;p&gt;&lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt; Jakarta, Indonesia&lt;/p&gt;
+          &lt;p&gt;&lt;i class="fas fa-phone"&gt;&lt;/i&gt; +62 21 1234 5678&lt;/p&gt;
+          &lt;p&gt;&lt;i class="fas fa-envelope"&gt;&lt;/i&gt; info@techstartup.com&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;form class="contact-form"&gt;
+          &lt;input type="text" placeholder="Nama Lengkap" required&gt;
+          &lt;input type="email" placeholder="Email" required&gt;
+          &lt;textarea placeholder="Pesan" rows="5" required&gt;&lt;/textarea&gt;
+          &lt;button type="submit" class="btn btn-primary"&gt;Kirim Pesan&lt;/button&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Footer --&gt;
+  &lt;footer class="footer"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="footer-content"&gt;
+        &lt;div class="footer-section"&gt;
+          &lt;h3&gt;TechStartup&lt;/h3&gt;
+          &lt;p&gt;Solusi teknologi untuk masa depan bisnis Anda.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="footer-section"&gt;
+          &lt;h4&gt;Links&lt;/h4&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#home"&gt;Beranda&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#features"&gt;Fitur&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;Tentang&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contact"&gt;Kontak&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="footer-section"&gt;
+          &lt;h4&gt;Social Media&lt;/h4&gt;
+          &lt;div class="social-links"&gt;
+            &lt;a href="#"&gt;&lt;i class="fab fa-facebook"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a href="#"&gt;&lt;i class="fab fa-twitter"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a href="#"&gt;&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a href="#"&gt;&lt;i class="fab fa-linkedin"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="footer-bottom"&gt;
+        &lt;p&gt;&copy; 2024 TechStartup. All rights reserved.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-palette"></i> CSS Styling</h2>
+              
+              <div class="code-example">
+                <h3>CSS Variables dan Reset:</h3>
+                <pre><code>/* CSS Variables */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #1e293b;
+  --text-secondary: #64748b;
+  
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}</code></pre>
+              </div>
+
+              <div class="code-example">
+                <h3>Header & Navigation:</h3>
+                <pre><code>/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  margin: 3px 0;
+  transition: var(--transition);
+}</code></pre>
+              </div>
+
+              <div class="code-example">
+                <h3>Hero Section:</h3>
+                <pre><code>/* Hero Section */
+.hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-mobile-alt"></i> Responsive Design</h2>
+              
+              <div class="code-example">
+                <h3>Media Queries untuk Responsif:</h3>
+                <pre><code>/* Tablet */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    padding: 2rem 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan & Implementasi</h2>
+              
+              <div class="exercise-card">
+                <h3>Latihan 1: Setup Proyek</h3>
+                <p>Buat struktur folder dan file untuk proyek landing page:</p>
+                <ul>
+                  <li>Buat folder <code>landing-page</code></li>
+                  <li>Buat file <code>index.html</code></li>
+                  <li>Buat file <code>style.css</code></li>
+                  <li>Buat file <code>script.js</code></li>
+                  <li>Buat folder <code>images</code> untuk gambar</li>
+                </ul>
+              </div>
+              
+              <div class="exercise-card">
+                <h3>Latihan 2: Implementasi Hero Section</h3>
+                <p>Implementasikan hero section dengan:</p>
+                <ul>
+                  <li>Background gradient yang menarik</li>
+                  <li>Typography yang jelas dan readable</li>
+                  <li>Call-to-action buttons</li>
+                  <li>Responsive design</li>
+                </ul>
+                
+                <details>
+                  <summary>Tips Implementasi</summary>
+                  <ul>
+                    <li>Gunakan CSS Grid untuk layout</li>
+                    <li>Tambahkan animasi hover pada buttons</li>
+                    <li>Optimalkan untuk mobile-first design</li>
+                    <li>Gunakan placeholder image atau icon</li>
+                  </ul>
+                </details>
+              </div>
+              
+              <div class="exercise-card">
+                <h3>Latihan 3: Features Section</h3>
+                <p>Buat features section dengan:</p>
+                <ul>
+                  <li>Grid layout untuk feature cards</li>
+                  <li>Icon dari Font Awesome</li>
+                  <li>Hover effects</li>
+                  <li>Consistent spacing</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-lightbulb"></i> Tips & Best Practices</h2>
+              
+              <div class="tips-grid">
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Mobile-First Design</h3>
+                  <p>Mulai dengan design mobile, kemudian scale up untuk desktop.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Optimasi Performance</h3>
+                  <p>Gunakan CSS yang efisien dan optimalkan gambar.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Accessibility</h3>
+                  <p>Pastikan website dapat diakses oleh semua pengguna.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> SEO Friendly</h3>
+                  <p>Gunakan semantic HTML dan meta tags yang tepat.</p>
+                </div>
+              </div>
+            </section>
+
+            <div id="module-navigation">
+              <!-- Navigation akan di-generate otomatis -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html> 

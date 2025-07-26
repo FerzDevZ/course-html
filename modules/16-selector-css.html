@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16. CSS Selector - HTML & CSS Course</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list">
+            <!-- Modul akan di-generate otomatis dari JavaScript -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list">
+            <!-- Modul CSS akan di-generate otomatis -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list">
+            <!-- Proyek akan di-generate otomatis -->
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <div class="content-wrapper">
+        <div class="module-content">
+          <div class="module-header">
+            <h1 class="module-title">16. CSS Selector</h1>
+            <p class="module-subtitle">Pelajari cara memilih dan mengatur elemen HTML dengan CSS Selector</p>
+          </div>
+
+          <div class="module-body">
+            <section class="content-section">
+              <h2><i class="fas fa-crosshairs"></i> Apa itu CSS Selector?</h2>
+              <p>
+                CSS Selector adalah cara untuk memilih elemen HTML yang ingin kita style. 
+                Seperti seorang detektif yang mencari target tertentu, selector membantu kita 
+                menemukan dan mengatur elemen yang tepat.
+              </p>
+              
+              <div class="info-card">
+                <h3><i class="fas fa-lightbulb"></i> Mengapa Selector Penting?</h3>
+                <ul>
+                  <li><strong>Presisi:</strong> Memilih elemen yang tepat tanpa mempengaruhi yang lain</li>
+                  <li><strong>Efisiensi:</strong> Mengurangi jumlah kode CSS yang diperlukan</li>
+                  <li><strong>Maintainability:</strong> Mudah mengubah style untuk elemen tertentu</li>
+                  <li><strong>Flexibility:</strong> Berbagai cara untuk mencapai hasil yang sama</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-lightbulb"></i> Analogi & Penjelasan</h2>
+              
+              <div class="analogy-section">
+                <h3><i class="fas fa-brain"></i> Selector Seperti Alamat Rumah</h3>
+                <div class="analogy-content">
+                  <div class="analogy-card">
+                    <h4>🏠 Element Selector = Nama Jalan</h4>
+                    <p>Seperti "Jalan Sudirman" - semua rumah di jalan tersebut akan terpengaruh.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4>🏷️ Class Selector = Nomor Rumah</h4>
+                    <p>Seperti "Rumah No. 15" - hanya rumah dengan nomor tertentu yang terpengaruh.</p>
+                  </div>
+                  <div class="analogy-card">
+                    <h4>🆔 ID Selector = Alamat Lengkap</h4>
+                    <p>Seperti "Jalan Sudirman No. 15, Jakarta" - sangat spesifik untuk satu rumah.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-sitemap"></i> Topologi Selector</h2>
+              
+              <div class="topology-section">
+                <h3><i class="fas fa-project-diagram"></i> Hierarki Spesifisitas Selector</h3>
+                <div class="topology-diagram">
+                  <div class="topology-item">
+                    <div class="topology-icon">🎯</div>
+                    <h4>Universal (*)</h4>
+                    <p>Spesifisitas: 0,0,0,0</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">📝</div>
+                    <h4>Element (p, div)</h4>
+                    <p>Spesifisitas: 0,0,0,1</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">🏷️</div>
+                    <h4>Class (.class)</h4>
+                    <p>Spesifisitas: 0,0,1,0</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">🆔</div>
+                    <h4>ID (#id)</h4>
+                    <p>Spesifisitas: 0,1,0,0</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">⚡</div>
+                    <h4>Inline Style</h4>
+                    <p>Spesifisitas: 1,0,0,0</p>
+                  </div>
+                  <div class="topology-item">
+                    <div class="topology-icon">🔧</div>
+                    <h4>!important</h4>
+                    <p>Spesifisitas: ∞ (tak terbatas)</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> Jenis-jenis Selector</h2>
+              
+              <div class="selector-grid">
+                <div class="selector-card">
+                  <h3>Element Selector</h3>
+                  <pre><code>p {
+  color: red;
+}</code></pre>
+                  <p>Mengatur semua elemen &lt;p&gt;</p>
+                  <div class="demo-result">
+                    <p style="color: red;">Contoh paragraf dengan warna merah</p>
+                  </div>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Class Selector</h3>
+                  <pre><code>.highlight {
+  background: yellow;
+}</code></pre>
+                  <p>Mengatur elemen dengan class="highlight"</p>
+                  <div class="demo-result">
+                    <span style="background: yellow; padding: 2px 4px;">Contoh dengan class highlight</span>
+                  </div>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>ID Selector</h3>
+                  <pre><code>#header {
+  background: blue;
+}</code></pre>
+                  <p>Mengatur elemen dengan id="header"</p>
+                  <div class="demo-result">
+                    <div style="background: blue; color: white; padding: 8px; border-radius: 4px;">Header dengan ID</div>
+                  </div>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Descendant Selector</h3>
+                  <pre><code>div p {
+  margin: 10px;
+}</code></pre>
+                  <p>Mengatur &lt;p&gt; yang ada di dalam &lt;div&gt;</p>
+                  <div class="demo-result">
+                    <div style="border: 1px solid #ccc; padding: 10px;">
+                      <p style="margin: 10px;">Paragraf di dalam div</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Child Selector</h3>
+                  <pre><code>div > p {
+  font-weight: bold;
+}</code></pre>
+                  <p>Mengatur &lt;p&gt; yang langsung di dalam &lt;div&gt;</p>
+                  <div class="demo-result">
+                    <div style="border: 1px solid #ccc; padding: 10px;">
+                      <p style="font-weight: bold;">Paragraf langsung di dalam div</p>
+                      <span><p>Paragraf tidak langsung (tidak terpengaruh)</p></span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="selector-card">
+                  <h3>Adjacent Sibling</h3>
+                  <pre><code>h1 + p {
+  font-size: 18px;
+}</code></pre>
+                  <p>Mengatur &lt;p&gt; yang langsung setelah &lt;h1&gt;</p>
+                  <div class="demo-result">
+                    <h1 style="margin: 0;">Judul</h1>
+                    <p style="font-size: 18px;">Paragraf setelah h1</p>
+                    <p>Paragraf kedua (tidak terpengaruh)</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-magic"></i> Pseudo-class Selector</h2>
+              
+              <div class="property-table">
+                <h3>Pseudo-class yang Sering Digunakan:</h3>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Selector</th>
+                      <th>Fungsi</th>
+                      <th>Contoh</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>:hover</code></td>
+                      <td>Ketika mouse di atas elemen</td>
+                      <td><code>button:hover { background: blue; }</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>:active</code></td>
+                      <td>Ketika elemen sedang diklik</td>
+                      <td><code>button:active { transform: scale(0.95); }</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>:focus</code></td>
+                      <td>Ketika elemen mendapat fokus</td>
+                      <td><code>input:focus { border-color: blue; }</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>:first-child</code></td>
+                      <td>Elemen pertama dari parent</td>
+                      <td><code>li:first-child { font-weight: bold; }</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>:last-child</code></td>
+                      <td>Elemen terakhir dari parent</td>
+                      <td><code>li:last-child { border-bottom: none; }</code></td>
+                    </tr>
+                    <tr>
+                      <td><code>:nth-child(n)</code></td>
+                      <td>Elemen ke-n dari parent</td>
+                      <td><code>li:nth-child(odd) { background: #f0f0f0; }</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-code"></i> Code Playground</h2>
+              
+              <p>Praktik langsung dengan berbagai selector CSS. Coba ubah selector dan lihat hasilnya!</p>
+              
+              <div id="code-playground">
+                <!-- Playground akan di-load otomatis -->
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-tasks"></i> Latihan Praktis</h2>
+              
+              <div class="exercise-card">
+                <h3>Latihan 1: Selector Dasar</h3>
+                <p>Buat CSS untuk mengatur elemen berikut:</p>
+                <ul>
+                  <li>Semua heading h2 berwarna biru</li>
+                  <li>Elemen dengan class "important" berwarna merah</li>
+                  <li>Elemen dengan id "main-title" berukuran 2rem</li>
+                </ul>
+                
+                <details>
+                  <summary>Lihat Solusi</summary>
+                  <pre><code>h2 {
+  color: blue;
+}
+
+.important {
+  color: red;
+}
+
+#main-title {
+  font-size: 2rem;
+}</code></pre>
+                </details>
+              </div>
+              
+              <div class="exercise-card">
+                <h3>Latihan 2: Selector Kompleks</h3>
+                <p>Buat CSS untuk:</p>
+                <ul>
+                  <li>Paragraf di dalam div dengan class "container"</li>
+                  <li>Button yang langsung setelah heading h1</li>
+                  <li>Elemen li yang ganjil dalam ul</li>
+                </ul>
+                
+                <details>
+                  <summary>Lihat Solusi</summary>
+                  <pre><code>.container p {
+  line-height: 1.6;
+}
+
+h1 + button {
+  margin-top: 1rem;
+}
+
+ul li:nth-child(odd) {
+  background: #f0f0f0;
+}</code></pre>
+                </details>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-road"></i> Learning Path</h2>
+              
+              <div class="learning-path">
+                <h3><i class="fas fa-map"></i> Jalan Menuju Selector Master</h3>
+                <div class="path-steps">
+                  <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h4>Basic Selectors</h4>
+                      <p>Element, class, dan ID selector</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h4>Combinators</h4>
+                      <p>Descendant, child, dan sibling selector</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h4>Pseudo-classes</h4>
+                      <p>:hover, :focus, :nth-child, dll</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                      <h4>Pseudo-elements</h4>
+                      <p>::before, ::after, ::first-line</p>
+                    </div>
+                  </div>
+                  <div class="path-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                      <h4>Advanced Selectors</h4>
+                      <p>Attribute selector dan selector specificity</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <h2><i class="fas fa-exclamation-triangle"></i> Best Practices</h2>
+              
+              <div class="tips-grid">
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Gunakan Class untuk Reusability</h3>
+                  <p>Class lebih fleksibel dan dapat digunakan ulang di berbagai elemen.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Hindari ID untuk Styling</h3>
+                  <p>ID terlalu spesifik dan sulit untuk override. Gunakan untuk JavaScript.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Pahami Specificity</h3>
+                  <p>Ketahui urutan prioritas selector untuk menghindari konflik.</p>
+                </div>
+                
+                <div class="tip-card">
+                  <h3><i class="fas fa-check"></i> Gunakan Nama yang Deskriptif</h3>
+                  <p>Beri nama class yang jelas dan mudah dipahami.</p>
+                </div>
+              </div>
+            </section>
+
+            <div id="module-navigation">
+              <!-- Navigation akan di-generate otomatis -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html> 

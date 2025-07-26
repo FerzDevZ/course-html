@@ -3,39 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Course HTML: Dari Pemula ke Pro</title>
+  <title>Full Course HTML & CSS: Dari Pemula ke Pro</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
-      <button class="hamburger" aria-label="Buka menu" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
-      <h2>HTML Course</h2>
-      <nav>
-        <ul>
-          <li><a href="modules/01-pengenalan-html.html">1. Pengenalan HTML</a></li>
-          <li><a href="modules/02-struktur-dasar-html.html">2. Struktur Dasar HTML</a></li>
-          <li><a href="modules/03-heading-paragraf.html">3. Heading & Paragraf</a></li>
-          <li><a href="modules/04-list.html">4. List</a></li>
-          <li><a href="modules/05-link-navigasi.html">5. Link & Navigasi</a></li>
-          <li><a href="#">...</a></li>
-        </ul>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <button class="hamburger" aria-label="Buka menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title">
+            <i class="fas fa-code"></i>
+            HTML & CSS Course
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="progress-indicator">
+            <span id="progress-text">0%</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+          <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2><i class="fas fa-graduation-cap"></i> Modul Pembelajaran</h2>
+        <p class="sidebar-subtitle">Pilih modul untuk mulai belajar</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <h3><i class="fas fa-play-circle"></i> Dasar HTML</h3>
+          <ul id="module-list">
+            <!-- Modul akan di-generate otomatis dari JavaScript -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-palette"></i> CSS Styling</h3>
+          <ul id="css-module-list">
+            <!-- Modul CSS akan di-generate otomatis -->
+          </ul>
+        </div>
+        
+        <div class="nav-section">
+          <h3><i class="fas fa-rocket"></i> Proyek & Latihan</h3>
+          <ul id="project-module-list">
+            <!-- Proyek akan di-generate otomatis -->
+          </ul>
+        </div>
       </nav>
-      <button id="theme-toggle">🌙/☀️</button>
+
+      <div class="sidebar-footer">
+        <div class="user-progress">
+          <div class="progress-summary">
+            <span class="completed-count" id="completed-count">0</span>
+            <span class="total-count" id="total-count">0</span>
+          </div>
+          <p>Modul Selesai</p>
+        </div>
+      </div>
     </aside>
+
+    <!-- Main Content -->
     <main class="content">
-      <h1>Full Course HTML: Dari Pemula ke Pro</h1>
-      <p>Selamat datang di kursus HTML terlengkap! Website ini membimbing Anda dari dasar hingga mahir HTML, lengkap dengan contoh kode, latihan, dan studi kasus nyata. Pilih modul di samping untuk mulai belajar.</p>
-      <ul>
-        <li>44+ Modul Materi</li>
-        <li>Contoh kode interaktif</li>
-        <li>Latihan & Quiz</li>
-        <li>Studi kasus proyek nyata</li>
-        <li>Dark/Light Mode</li>
-      </ul>
-      <p><b>Mulai dari sidebar!</b></p>
+      <div class="content-wrapper">
+        <div class="welcome-section" id="welcome-content">
+          <div class="hero-card">
+            <div class="hero-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h1>Selamat Datang di Kursus HTML & CSS</h1>
+            <p class="hero-description">
+              Pelajari HTML dan CSS dari dasar hingga mahir dengan materi terstruktur, 
+              contoh kode interaktif, dan proyek nyata. Kursus ini dirancang untuk pemula 
+              yang ingin menjadi web developer profesional.
+            </p>
+            
+            <div class="features-grid">
+              <div class="feature-card">
+                <i class="fas fa-book"></i>
+                <h3>50+ Modul Materi</h3>
+                <p>Materi lengkap dari dasar hingga advanced</p>
+              </div>
+              <div class="feature-card">
+                <i class="fas fa-code"></i>
+                <h3>Contoh Kode Interaktif</h3>
+                <p>Praktik langsung dengan editor kode</p>
+              </div>
+              <div class="feature-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Latihan & Quiz</h3>
+                <p>Test pemahaman dengan latihan</p>
+              </div>
+              <div class="feature-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Proyek Nyata</h3>
+                <p>Buat website lengkap dari awal</p>
+              </div>
+            </div>
+
+            <div class="cta-section">
+              <h2>Mulai Belajar Sekarang!</h2>
+              <p>Pilih modul pertama dari sidebar untuk memulai perjalanan belajar HTML & CSS</p>
+              <button class="cta-button" onclick="scrollToFirstModule()">
+                <i class="fas fa-play"></i>
+                Mulai dari Modul 1
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content akan di-load dinamis -->
+        <div id="module-content" class="module-content" style="display: none;">
+          <!-- Konten modul akan di-load di sini -->
+        </div>
+      </div>
     </main>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html> 
